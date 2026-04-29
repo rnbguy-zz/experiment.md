@@ -1,0 +1,101 @@
+# Testing Path Memory in Sequential Double-Slit Measurements
+
+**Author:** Mina Moussa
+**Date:** 2026-04-29  
+
+---
+
+## Overview
+
+This document proposes a simple experimental test to determine whether a particle retains path-specific information after which-path detection, and whether that influences its behaviour in a subsequent identical setup.
+
+The core question is:
+
+> If a particle is measured going through one slit, is it more likely to take the same slit again in a second identical setup?
+
+---
+
+## Hypothesis
+
+After passing through a double slit with a which-path detector, a particle may retain path-specific information (a “path memory” effect).
+
+This could result in a measurable bias:
+
+- A particle detected at **Left slit 1 (L₁)** may be more likely to go through **Left slit 2 (L₂)**
+- A particle detected at **Right slit 1 (R₁)** may be more likely to go through **Right slit 2 (R₂)**
+
+In short:
+
+> Same-path outcomes may occur more frequently than mixed-path outcomes.
+
+---
+
+## Experimental Setup
+
+1. Fire **one particle at a time**.
+2. The particle encounters a **first double-slit wall**.
+3. A **which-path detector** records:
+   - Left slit → **L₁**
+   - Right slit → **R₁**
+4. The particle continues forward.
+5. It encounters a **second identical double-slit wall** (no detector).
+6. The particle lands on a final screen, allowing inference of:
+   - Left slit → **L₂**
+   - Right slit → **R₂**
+7. Repeat the experiment many times to build statistics.
+
+---
+
+## Outcomes to Record
+
+- **L₁ → L₂**
+- **L₁ → R₂**
+- **R₁ → L₂**
+- **R₁ → R₂**
+
+---
+
+## Prediction (Path Memory Hypothesis)
+
+If path memory exists:
+
+- **L₁ → L₂ > L₁ → R₂**
+- **R₁ → R₂ > R₁ → L₂**
+
+This would indicate that the first measurement influences the second path choice.
+
+---
+
+## Prediction (Standard Quantum Mechanics)
+
+Standard quantum mechanics predicts:
+
+- No dependence between the first and second slit choices
+- Equal probabilities for all outcomes in a symmetric setup
+
+Expected:
+
+- **L₁ → L₂ ≈ 25%**
+- **L₁ → R₂ ≈ 25%**
+- **R₁ → L₂ ≈ 25%**
+- **R₁ → R₂ ≈ 25%**
+
+---
+
+## Significance
+
+This experiment tests whether which-path detection creates a persistent effect on future particle behaviour beyond standard quantum predictions.
+
+A positive result (path bias) would suggest new physics or an extension to current interpretations of quantum mechanics.
+
+---
+
+## Summary
+
+This experiment asks a simple but fundamental question:
+
+> Does a particle "remember" its path after measurement, or does it behave independently at each stage?
+
+The outcome provides a direct test between:
+- A **path memory hypothesis**
+- The **standard quantum mechanical prediction of independence**
