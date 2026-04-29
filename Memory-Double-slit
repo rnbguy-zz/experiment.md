@@ -130,3 +130,20 @@ The second double slit is constructed to be *identical* to the first slit in:
 No attempt is made to erase or modify which-path information after the first measurement.
 
 This ensures the experiment strictly tests whether path information from the first measurement influences the second path choice.
+
+## Experimental Requirement
+
+This proposal requires that the experimental setup be tested **explicitly as defined**, using:
+
+- Two physically identical double-slit barriers
+- A which-path detector only at the first slit
+- No intermediate erasure or modification of path information
+- Single-particle regime
+
+The outcome should be measured directly in this configuration.
+
+While related quantum experiments exist, this proposal emphasizes that:
+
+> The result should not be assumed from analogous systems or general theoretical expectations, but verified through direct measurement of this specific configuration.
+
+This ensures that any potential path-dependent effects are tested without relying on inference from similar experimental frameworks.
