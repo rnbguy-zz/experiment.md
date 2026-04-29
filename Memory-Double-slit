@@ -99,3 +99,34 @@ This experiment asks a simple but fundamental question:
 The outcome provides a direct test between:
 - A **path memory hypothesis**
 - The **standard quantum mechanical prediction of independence**
+
+
+## Figure 1: Sequential Double-Slit Path Measurement Setup
+
+```mermaid
+flowchart LR
+    A[Single Particle Source] --> B[First Double Slit]
+    B --> C[Which-Path Detector]
+
+    C -->|L₁| D1[Left Path Propagation]
+    C -->|R₁| D2[Right Path Propagation]
+
+    D1 --> E[Second Double Slit (Identical Geometry)]
+    D2 --> E
+
+    E --> F[Final Detection Screen]
+
+    F --> G[L₂ or R₂ Recorded]
+
+---
+
+```markdown
+**Note:**  
+The second double slit is constructed to be *identical* to the first slit in:
+- slit width  
+- slit separation  
+- alignment relative to the particle source  
+
+No attempt is made to erase or modify which-path information after the first measurement.
+
+This ensures the experiment strictly tests whether path information from the first measurement influences the second path choice.
