@@ -263,3 +263,25 @@ flowchart LR
     E --> F[Final Detection Screen]
 
     F --> G[L₂ or R₂ Recorded]
+
+
+## Experimental Requirement and Novelty
+
+This proposal requires that the experimental setup be tested **explicitly as defined**, using:
+
+- Two physically identical double-slit barriers
+- A which-path detector only at the first slit
+- No intermediate erasure or modification of path information
+- Single-particle and controlled multi-particle regimes
+
+To the best of the author's knowledge:
+
+> This exact sequential double-slit configuration, with asymmetric which-path detection applied only at the first stage and followed by a second identical slit without detection, has not been explicitly tested in published experimental literature.
+
+While related quantum experiments exist (e.g. interferometry, quantum eraser setups, and sequential measurement systems), those differ in geometry, measurement symmetry, or use of recombination rather than direct sequential slit propagation.
+
+Therefore:
+
+> The outcome of this specific configuration should not be assumed solely from analogous systems or general theoretical expectations, but verified through direct experimental measurement.
+
+This ensures that any potential path-dependent or inter-particle correlation effects are tested without relying on inference from structurally different experimental frameworks.
