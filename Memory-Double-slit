@@ -285,3 +285,28 @@ Therefore:
 > The outcome of this specific configuration should not be assumed solely from analogous systems or general theoretical expectations, but verified through direct experimental measurement.
 
 This ensures that any potential path-dependent or inter-particle correlation effects are tested without relying on inference from structurally different experimental frameworks.
+
+## Why This Matters
+
+The proposed experiments directly test a foundational assumption of standard quantum mechanics:
+
+> That measurement outcomes at later stages are independent of prior path-specific measurement history, beyond the current quantum state.
+
+While this assumption is strongly supported by existing theoretical frameworks and related experimental configurations, it has not been explicitly verified in the specific sequential double-slit geometry defined here.
+
+This work therefore serves as a direct empirical test of **path independence in sequential measurement systems**, rather than relying on inference from analogous experimental designs such as interferometers or recombination-based setups.
+
+If the results align with standard predictions, this experiment provides a clean confirmation of path independence under a novel configuration.
+
+However, if a statistically significant path-dependent bias or inter-particle correlation is observed, the implications would be substantial:
+
+- Evidence of **history-dependent (non-Markovian) behaviour** in quantum systems  
+- Indication of **previously unaccounted-for correlations** in sequential measurements  
+- Potential need to extend or refine current models of **measurement, decoherence, and system evolution**
+
+Such findings would not represent a minor interpretational adjustment, but rather a **direct experimental challenge to established assumptions**, motivating both theoretical and experimental re-examination.
+
+In either outcome, the experiment contributes value:
+
+- As a **direct validation** of existing theory in a new configuration, or  
+- As a **potential discovery of new physical behaviour**
