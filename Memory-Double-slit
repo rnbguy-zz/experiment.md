@@ -1,4 +1,4 @@
-# Testing Path Memory and Measurement-Induced Effects in Sequential and Entangled Double-Slit Systems
+# Testing Path Memory and Inter-Particle Correlation in Sequential Double-Slit Measurements
 
 **Author:** Mina Moussa  
 **Date:** 2026-05-02  
@@ -7,161 +7,441 @@
 
 ## Overview
 
-This document proposes three experimental tests designed to investigate whether quantum measurement outcomes are strictly independent, or whether prior measurement history can influence future particle behaviour.
+This document proposes experimental tests designed to investigate whether quantum measurement outcomes are strictly independent, or whether prior measurement context can influence future particle behaviour.
 
-The work focuses on:
+The core questions are:
 
-1. **Path Memory (Single Particle)**  
-2. **Entanglement-Mediated Influence (Two Particles)**  
-3. **Measurement History Dependence (Sequential “Conditioning”)**
+1. Does a particle measured at one slit show a preference for the same slit in a subsequent identical setup?
+2. Can asymmetric path enhancement amplify any path-memory effect?
+3. Can a second particle show path correlation with a previously measured particle?
+4. Can entanglement allow a measured particle to influence the standalone distribution of its unmeasured partner?
 
 ---
 
 ## Core Hypothesis
 
-### Path Memory Hypothesis
+### Path Memory / Path Confidence Hypothesis
 
-A particle that undergoes which-path measurement may retain path-specific information that biases its future path selection.
+After passing through a which-path detector at the first double slit, a particle may retain path-specific memory or confidence that influences its behaviour at a later identical double slit.
+
+This may produce:
+
+- L₁ → L₂ > L₁ → R₂
+- R₁ → R₂ > R₁ → L₂
+
+---
+
+### Asymmetric Path Enhancement Hypothesis
+
+To make the test more sensitive, Path B is deliberately enhanced after the first slit while preserving continuous propagation.
+
+Path B may be enhanced using:
+
+- Longer propagation distance
+- Weak delocalised scatterer
+- Mild continuous phase accumulation
+- Minimal disturbance to avoid abrupt reset
+
+If path confidence accumulates, then particles that took Path B may show stronger later bias toward Path B:
+
+- R₁ → R₂ increases as Path B enhancement increases
+
+---
+
+### Inter-Particle Correlation Hypothesis
+
+When two particles travel close in time, the path outcome of one particle may influence the probability distribution of the second.
+
+This may produce:
+
+- P(L₂ʙ | L₂ᴀ) > 50%
+- P(R₂ʙ | R₂ᴀ) > 50%
 
 ---
 
 ### Entanglement-Mediated Influence Hypothesis
 
-A which-path measurement performed on one particle may influence the **standalone statistical behaviour** of its entangled partner, beyond standard conditional correlations.
+When two particles are generated as an entangled pair, which-path measurement on Particle A may influence the standalone behaviour of Particle B, even when Particle B is not directly measured for path.
+
+The key non-standard prediction is:
+
+- P(L₂ʙ) ≠ 50%
+- P(R₂ʙ) ≠ 50%
+
+without conditioning on Particle A.
 
 ---
 
-### Measurement History Dependence Hypothesis
-
-> Repeated which-path measurements may induce a persistent bias in subsequent unobserved evolution, beyond that predicted by standard state-update rules.
-
-This tests whether quantum systems exhibit **non-Markovian behaviour**, where outcomes depend on measurement history, not only the current state.
-
----
-
-# 🔬 Experiment 1 — Single Particle Path Memory
+# Experiment 1 — Single Particle Path Memory with Asymmetric Enhancement
 
 ## Objective
 
-Test whether a particle’s path selection depends on prior which-path measurement.
+Test whether a single particle retains path-specific information after which-path detection, and whether an enhanced path strengthens later same-path bias.
 
 ---
 
 ## Experimental Setup
 
-1. Emit **one particle at a time**
-2. Particle passes through:
-   - First double slit  
-   - **Which-path detector ON** → record L₁ or R₁  
+1. Emit one particle at a time.
+2. Particle encounters the first double slit.
+3. A which-path detector records:
 
-3. Particle propagates forward
-4. Particle passes through:
+   - Left slit / Path A → L₁
+   - Right slit / Path B → R₁
 
-> **Second double slit, engineered to be physically identical to the first within experimental tolerance**
+4. After the first slit, apply asymmetric enhancement only to Path B:
 
-5. Final detection:
-   - L₂ or R₂  
+   - Path B is made physically longer than Path A.
+   - Path B may include a weak detector or weak scatterer.
+   - The weak interaction should be low strength and preferably delocalised.
+   - Optional: apply a mild uniform potential or continuous phase accumulation along Path B.
 
----
+5. Particle then propagates to the second double slit.
 
-## Predictions
+> The second double slit must be physically identical to the first double slit within experimental tolerance.
 
-### Standard Quantum Mechanics
+6. Particle lands on a final detection screen.
+7. Final outcome is inferred as:
 
-- Independent outcomes  
-- No bias:
+   - Left slit → L₂
+   - Right slit → R₂
 
-- L₁ → L₂ ≈ L₁ → R₂  
-- R₁ → R₂ ≈ R₁ → L₂  
+8. Repeat for a large sample size while varying:
 
----
-
-### Path Memory Hypothesis
-
-- Same-path bias:
-
-- L₁ → L₂ > L₁ → R₂  
-- R₁ → R₂ > R₁ → L₂  
+   - Path B length difference ΔL
+   - Weak-marker strength
+   - Detector strength
+   - Path B phase accumulation
 
 ---
 
-# 🔬 Experiment 2 — Entanglement-Based Influence
+## Outcomes to Record
+
+- L₁ → L₂
+- L₁ → R₂
+- R₁ → L₂
+- R₁ → R₂
+
+Also record:
+
+- Interference visibility
+- Probability distribution on the final screen
+- Dependence on Path B length difference
+- Dependence on weak-marker strength
+
+---
+
+## Standard Quantum Mechanics Prediction
+
+Standard quantum mechanics predicts:
+
+- No persistent path memory beyond the current quantum state.
+- No same-path preference purely because the particle previously took that path.
+- Any change in interference visibility should follow standard complementarity.
+- Path distinguishability and phase accumulation may alter interference, but not create memory-based path preference.
+
+Expected baseline:
+
+- L₁ → L₂ ≈ L₁ → R₂
+- R₁ → R₂ ≈ R₁ → L₂
+
+If all four outcomes are symmetric:
+
+- L₁ → L₂ ≈ 25%
+- L₁ → R₂ ≈ 25%
+- R₁ → L₂ ≈ 25%
+- R₁ → R₂ ≈ 25%
+
+---
+
+## Path Memory / Path Confidence Prediction
+
+The hypothesis predicts same-path dominance:
+
+- L₁ → L₂ > L₁ → R₂
+- R₁ → R₂ > R₁ → L₂
+
+With asymmetric enhancement:
+
+- R₁ → R₂ bias may increase as Path B enhancement increases.
+- Stronger Path B distance or weak interaction may produce stronger “path confidence.”
+- Deviations may be nonlinear or history-dependent.
+
+---
+
+## Key Test
+
+The critical test is whether the final path probability depends on prior path history in a way not explained by ordinary phase shift, interference visibility loss, or detector disturbance.
+
+---
+
+# Experiment 2 — Two-Particle Sequential Correlation
 
 ## Objective
 
-Test whether which-path measurement on one particle influences the **unconditioned behaviour** of its entangled partner.
+Test whether a second particle, travelling very close in time to a measured first particle, shows path correlation without being directly measured for path.
 
 ---
 
 ## Core Idea
 
-- Particle A is measured  
-- Particle B is not  
-- Both originate from an **entangled pair**
+Particle A is measured.
 
-> Particle B still propagates through the slit system and reaches the screen.
+Particle B is not measured.
 
-The test is:
+If both particles are close enough in time within the same apparatus, Particle B may behave as if it has access to path information from Particle A.
 
-> **Does Particle B exhibit any standalone bias without conditioning on Particle A?**
+This is not necessarily entanglement-based unless the particles are prepared in a shared entangled state. In this experiment, the focus is sequential temporal proximity.
 
 ---
 
 ## Experimental Setup
 
-1. Generate **entangled particle pair (A, B)**
+1. Emit Particle A.
+2. Particle A passes through:
 
-2. Particle A:
-   - Passes through first double slit  
-   - **Which-path detector ON** → L₁ᴀ or R₁ᴀ  
+   - First double slit
+   - Which-path detector ON
 
-3. Particle B:
-   - Passes through:
+3. Record Particle A’s first outcome:
 
-> **Second double slit, physically identical to the first within experimental tolerance**
+   - L₁ᴀ or R₁ᴀ
 
-   - **No which-path detector**
+4. Emit Particle B shortly after Particle A.
 
----
+5. Timing is controlled so Particle A and Particle B are close in time within the apparatus.
 
-## Predictions
+6. For Particle B:
 
-### Standard Quantum Mechanics
+   - Which-path detector is OFF
 
-- No standalone bias:
+7. Both particles propagate through the second double slit.
 
-- P(L₂ʙ) ≈ 50%  
-- P(R₂ʙ) ≈ 50%  
+> The second double slit must be physically identical to the first double slit within experimental tolerance.
 
-- Correlations appear **only when conditioned on A**
+8. Final detection records:
 
----
-
-### Proposed Hypothesis
-
-- Particle B shows **unconditioned directional bias**
-
-- P(L₂ʙ) ≠ 50%  
-- P(R₂ʙ) ≠ 50%  
+   - Particle A: L₂ᴀ or R₂ᴀ
+   - Particle B: L₂ʙ or R₂ʙ
 
 ---
 
-# 🔬 Experiment 3 — Measurement History Dependence (Sequential Conditioning)
+## Outcomes to Record
+
+For each pair:
+
+- Particle A first slit outcome: L₁ᴀ or R₁ᴀ
+- Particle A second slit outcome: L₂ᴀ or R₂ᴀ
+- Particle B second slit outcome: L₂ʙ or R₂ʙ
+- Time separation Δt between A and B
+
+---
+
+## Correlation Analysis
+
+Measure:
+
+- P(L₂ʙ | L₂ᴀ)
+- P(R₂ʙ | R₂ᴀ)
+- P(L₂ʙ | L₁ᴀ)
+- P(R₂ʙ | R₁ᴀ)
+
+Also test whether correlation strength changes as Δt changes.
+
+---
+
+## Standard Quantum Mechanics Prediction
+
+If Particle A and Particle B are independently prepared and not entangled:
+
+- Particle B should behave independently.
+- Particle B should not inherit which-path information from Particle A.
+- Any observed correlation should be explainable by apparatus effects, detector memory, environmental disturbance, or statistical fluctuation.
+
+Expected:
+
+- P(L₂ʙ | L₂ᴀ) ≈ 50%
+- P(R₂ʙ | R₂ᴀ) ≈ 50%
+
+---
+
+## Inter-Particle Correlation Prediction
+
+The hypothesis predicts path-following behaviour:
+
+- P(L₂ʙ | L₂ᴀ) > 50%
+- P(R₂ʙ | R₂ᴀ) > 50%
+
+If the effect is real, it may:
+
+- Increase when Δt is smaller
+- Decrease when particles are separated further in time
+- Disappear when detector memory and apparatus persistence are eliminated
+
+---
+
+## Key Test
+
+The critical test is whether Particle B shows statistically significant path correlation with Particle A when Particle B has no direct which-path measurement.
+
+---
+
+# Experiment 3 — Entanglement-Based Influence with Only One Particle Observed
 
 ## Objective
 
-Test whether the **number or sequence of prior measurements** affects future outcomes after measurement ceases.
+Test whether which-path measurement on one particle influences the standalone distribution of its entangled partner.
 
 ---
 
-## Core Idea (Refined)
+## Core Clarification
 
-> If standard quantum mechanics is correct, repeated measurements only update the current state.  
-> Once measurement stops, future behaviour depends only on that state—not on how it was reached.
+This experiment uses true entanglement.
 
-This experiment tests:
+Unlike Experiment 2, Particle A and Particle B are generated together as an entangled pair.
 
-> Whether outcome distributions depend on the **count or sequence of prior measurements**, indicating non-Markovian behaviour.
+Particle A is measured for which-path.
+
+Particle B is not measured for which-path.
+
+Particle B still travels through the slit system and reaches the screen.
+
+The question is not whether Particle B propagates. It does.
+
+The key question is:
+
+> Does Particle B show standalone bias without conditioning on Particle A?
+
+---
+
+## Experimental Setup
+
+1. Generate an entangled particle pair:
+
+   - Particle A
+   - Particle B
+
+2. Send Particle A through:
+
+   - First double slit
+   - Which-path detector ON
+
+3. Record Particle A:
+
+   - L₁ᴀ or R₁ᴀ
+
+4. Send Particle B through:
+
+   - Second double slit
+   - No which-path detector
+
+> The second double slit must be physically identical to the first double slit within experimental tolerance.
+
+5. Record Particle B’s final detection position on the screen.
+
+6. Analyse Particle B in two ways:
+
+   - Unconditioned: ignore A’s result
+   - Conditioned: group B results by A’s result
+
+---
+
+## Observables
+
+### Unconditioned Distribution
+
+Measure Particle B without referencing Particle A:
+
+- P(L₂ʙ)
+- P(R₂ʙ)
+
+This is the most important test.
+
+---
+
+### Conditioned Distribution
+
+Group Particle B results according to Particle A:
+
+- P(L₂ʙ | L₁ᴀ)
+- P(R₂ʙ | R₁ᴀ)
+
+---
+
+## Standard Quantum Mechanics Prediction
+
+Standard quantum mechanics predicts:
+
+- Particle B still reaches the screen.
+- Particle B does not show standalone controllable bias.
+- Correlations may appear only when B’s results are compared with A’s results.
+- Looking at B alone should not reveal a signal from A’s measurement.
+
+Expected unconditioned result:
+
+- P(L₂ʙ) ≈ 50%
+- P(R₂ʙ) ≈ 50%
+
+Conditioned correlations may appear, but these are consistent with entanglement.
+
+---
+
+## Path Influence Prediction
+
+The hypothesis predicts:
+
+- Particle B shows unconditioned directional bias.
+- This bias exists even before sorting by Particle A’s result.
+
+Possible result:
+
+- P(L₂ʙ) ≠ 50%
+- P(R₂ʙ) ≠ 50%
+
+This would suggest that measurement on Particle A influences the standalone statistics of Particle B.
+
+---
+
+## Critical Distinction
+
+| Feature | Standard Quantum Mechanics | Proposed Hypothesis |
+|---|---|---|
+| Particle B reaches screen | Yes | Yes |
+| B has standalone bias | No | Yes |
+| B shows conditioned correlation with A | Yes | Yes |
+| B can reveal A’s measurement without comparison | No | Possibly |
+
+---
+
+## Key Test
+
+The key test is whether Particle B’s unconditioned distribution changes when Particle A is measured.
+
+If Particle B only shows correlations after sorting by Particle A, that is standard quantum mechanics.
+
+If Particle B shifts by itself, that would be non-standard.
+
+---
+
+# Experiment 4 — Measurement History Dependence / Sequential Conditioning
+
+## Objective
+
+Test whether the number or sequence of prior which-path measurements affects later outcomes after measurement stops.
+
+---
+
+## Core Idea
+
+This is the “training” experiment.
+
+A single particle passes through multiple observed double-slit stages, then later passes through another identical double slit with no observer.
+
+The question is whether repeated observation reinforces a path tendency.
+
+In stronger physics language:
+
+> This experiment tests whether repeated projective measurements induce a persistent bias in subsequent unobserved evolution beyond standard state-update rules.
 
 ---
 
@@ -169,169 +449,338 @@ This experiment tests:
 
 ### Conditioning Phase
 
-1. Emit **single particle**
+1. Emit one particle.
+2. Particle passes through N sequential double-slit stages, where N ≥ 1.
+3. Each stage includes:
 
-2. Particle passes through **N sequential stages** (N ≥ 1):
+   - Physically identical double slit
+   - Which-path detector ON
+   - Recorded outcome
 
-Each stage includes:
+4. Record the sequence:
 
-- Double slit  
-- **Which-path detector ON**  
-- Record sequence:
-
-- L₁, L₂, ..., Lₙ  
-- or R₁, R₂, ..., Rₙ  
-
-All stages are:
-
-> **Physically identical in slit geometry, alignment, and environment**
+   - L₁, L₂, L₃, ... Lₙ
+   - or R₁, R₂, R₃, ... Rₙ
+   - or mixed sequences such as L-R-L-R
 
 ---
 
 ### Free Evolution Phase
 
-3. Particle then passes through:
+5. After the conditioning stages, the particle passes through a final double slit.
 
-> **Final double slit, identical to previous slits, with NO which-path detector**
+> The final double slit must be physically identical to the previous slits within experimental tolerance.
 
-4. Record final outcome:
+6. The final double slit has:
 
-- L_f or R_f  
+   - No which-path detector
+   - No observer
+   - No weak marker
 
----
+7. Record final outcome:
 
-## Key Test Variables
-
-- Number of prior measurements (N)  
-- Sequence pattern (e.g. LLL vs LRLR)  
-
----
-
-## Predictions
-
-### Standard Quantum Mechanics
-
-- No dependence on measurement history beyond final state  
-- Final distribution independent of N:
-
-- P(L_f) ≈ 50%  
-- P(R_f) ≈ 50%  
+   - L_f
+   - R_f
 
 ---
 
-### Measurement History Hypothesis
+## Variables to Test
 
-- Final distribution depends on:
+- Number of prior measurements N
+- Sequence pattern:
 
-#### Measurement Count
+  - LLLL
+  - RRRR
+  - LRLR
+  - RRLL
+  - Random mixed history
 
-- Increasing N leads to increasing bias:
-
-- P(L_f | dominant L history) > 50%  
+- Time between stages
+- Distance between stages
+- Detector strength during conditioning
+- Whether final unobserved outcome changes with measurement history
 
 ---
 
-#### Sequence Structure
+## Standard Quantum Mechanics Prediction
 
-- Different sequences produce different outcomes:
+Standard quantum mechanics predicts:
 
-- LLLL ≠ LRLR  
+- Repeated measurement updates the state.
+- The particle does not accumulate extra “training” beyond its current quantum state.
+- Once measurement stops, future behaviour is governed by the current state and apparatus.
+- Final distribution should not depend on the full measurement history in a way beyond standard state evolution.
+
+Expected:
+
+- P(L_f) ≈ 50%
+- P(R_f) ≈ 50%
+
+No scaling effect should appear purely from increasing N.
+
+---
+
+## Measurement History / Path Conditioning Prediction
+
+The hypothesis predicts that prior measurement history affects later unobserved outcomes.
+
+Possible outcomes:
+
+- If prior history is mostly L:
+
+  - P(L_f) > 50%
+
+- If prior history is mostly R:
+
+  - P(R_f) > 50%
+
+- If N increases, the effect may strengthen.
+
+- Different sequences may produce different final results:
+
+  - LLLL may differ from LRLR
+  - RRRR may differ from RRLL
 
 ---
 
 ## Critical Test
 
-> Does the final unconditioned distribution vary as a function of N or sequence?
+The critical test is:
 
-- If NO → consistent with standard QM  
-- If YES → evidence of history-dependent behaviour  
+> Does the final unobserved distribution vary as a function of measurement count N or prior sequence?
 
----
+If no, the result supports standard quantum mechanics.
 
-## Interpretation
-
-A positive result would suggest:
-
-- Measurement effects accumulate beyond state update  
-- System retains **history-dependent information**  
-- Possible breakdown of standard Markov assumptions  
+If yes, it suggests possible history-dependent behaviour.
 
 ---
 
-# ⚙️ Apparatus Symmetry Requirement (Critical)
+# Apparatus Symmetry Requirement
 
-> All double-slit systems must be **physically and functionally identical within experimental tolerance**.
+This is critical.
+
+All double-slit systems used in the experiments must be physically and functionally identical within experimental tolerance.
 
 This includes:
 
-- Slit width  
-- Slit separation  
-- Material and thickness  
-- Alignment and orientation  
-- Optical path length  
-- Environmental exposure  
+- Slit width
+- Slit separation
+- Slit material
+- Slit thickness
+- Orientation
+- Alignment
+- Optical path length, except where deliberately varied
+- Environmental exposure
+- Detector placement
+- Distance to final screen
 
 ---
 
 ## Why This Matters
 
-> Any observed bias must not be attributable to geometric asymmetry.
+Any observed bias must not be attributable to ordinary apparatus asymmetry.
+
+Potential false explanations include:
+
+- Uneven slit width
+- Slight misalignment
+- Unequal detector response
+- Fabrication imperfections
+- Unequal optical distance
+- Thermal drift
+- Vibration
+- Residual detector memory
+- Electromagnetic leakage
 
 ---
 
-## Validation Procedure
+## Validation Procedures
 
-- Perform **left-right inversion test** (rotate apparatus 180°)
-- Confirm:
+### Left-Right Inversion Test
 
-> Observed effects follow particle behaviour, not apparatus geometry
+Rotate or mirror the apparatus.
 
----
+If the effect follows the apparatus, it is likely a geometric artifact.
 
-# 🧪 Experimental Controls
-
-- Neutral particles (e.g. photons)  
-- Detector isolation (no residual memory)  
-- Timing variation  
-- Environmental shielding  
-- Large statistical samples  
-- Independent replication  
+If the effect follows the recorded path history, it is more interesting.
 
 ---
 
-# 📊 Significance
+### Symmetric Baseline Runs
 
-This work tests a foundational assumption:
+Run the experiment with:
 
-> That quantum outcomes depend only on the present state, not on prior measurement history.
-
----
-
-## If Results Match Standard QM
-
-- Confirms independence  
-- Reinforces current interpretation  
+- No Path B enhancement
+- Equal path lengths
+- Weak marker off
+- Identical detector settings
 
 ---
 
-## If Results Show History Dependence
+### Detector-Off Control
 
-- Indicates non-Markovian quantum behaviour  
-- Suggests new form of measurement influence  
-- Motivates extension of quantum theory  
+Run the same geometry with all which-path detectors off.
 
 ---
 
-# 📌 Summary
+### Marker-Only Control
+
+Run the weak marker on Path B without first-stage which-path detection.
+
+---
+
+### Randomised Path Enhancement Control
+
+Randomly switch which side is enhanced.
+
+This tests whether the bias follows Path B specifically or follows whichever path is enhanced.
+
+---
+
+# Experimental Controls
+
+## Interaction Control
+
+Use neutral particles where possible:
+
+- Photons
+- Neutrons
+- Cold atoms
+
+---
+
+## Detector Isolation
+
+Ensure detectors have:
+
+- No afterglow
+- No residual thermal signal
+- No electromagnetic leakage
+- No mechanical disturbance
+- No persistent apparatus memory
+
+---
+
+## Timing Control
+
+For two-particle experiments:
+
+- Vary Δt between particles
+- Test whether correlation decays with time separation
+
+---
+
+## Environmental Control
+
+Stabilise:
+
+- Temperature
+- Vibration
+- Air currents
+- Electromagnetic fields
+- Optical alignment
+
+---
+
+## Statistical Control
+
+Use:
+
+- Large sample sizes
+- Predefined significance thresholds
+- Blind analysis where possible
+- Multiple runs
+- Independent replication
+
+---
+
+# Significance
+
+These experiments test whether quantum outcomes depend only on the current state, or whether prior measurement history and path enhancement can influence later probabilities.
+
+---
+
+## If Results Match Standard Quantum Mechanics
+
+Then:
+
+- No path memory is detected.
+- No standalone entanglement-mediated influence is detected.
+- No measurement-history accumulation is detected.
+- Sequential slit systems behave consistently with standard state-update rules.
+
+---
+
+## If Results Show Bias
+
+Then possible implications include:
+
+- History-dependent behaviour
+- Non-Markovian effects
+- Path-specific memory or confidence
+- Inter-particle correlation beyond expected independence
+- Possible need to refine models of measurement, decoherence, or state evolution
+
+---
+
+# Summary
 
 | Experiment | Tests | Standard Prediction | Hypothesis |
-|----------|------|-------------------|-----------|
-| 1 | Same particle | Independent | Path memory |
-| 2 | Entangled pair | No standalone bias | Path influence |
-| 3 | Measurement history | No dependence on N | History-dependent bias |
+|---|---|---|---|
+| 1 | Single particle with Path B enhancement | No memory-based bias | Path memory / confidence |
+| 2 | Two nearby particles | Independent behaviour | Sequential path correlation |
+| 3 | Entangled pair, one observed | No standalone bias in B | Entanglement-mediated influence |
+| 4 | Repeated observation then no observer | No dependence on N or sequence | Measurement-history conditioning |
 
 ---
 
-## Final Question
+# Final Question
 
-> Do quantum systems depend only on their current state, or can prior measurement history influence future probabilities?
+> Do particles behave independently at each stage, or can prior measurement, path enhancement, entanglement, or measurement history influence future probabilities?
+
+---
+
+# Figure 1: Enhanced Sequential Double-Slit Setup
+
+```mermaid
+flowchart LR
+    A[Single Particle Source] --> B[First Double Slit + Which-Path Detector]
+    B --> C1[Path A - Short / Control Path]
+    B --> C2[Path B - Longer + Weak Scatterer / Enhancement]
+    C1 --> D[Second Double Slit - Physically Identical Geometry]
+    C2 --> D
+    D --> E[Final Detection Screen]
+    E --> F[L₂ or R₂ Recorded]
+
+# Figure 2: Two-Particle Sequential Correlation
+flowchart LR
+    A[Particle A Source] --> B[First Double Slit + Which-Path Detector ON]
+    B --> C[Record L₁ᴀ or R₁ᴀ]
+    C --> D[Second Identical Double Slit]
+    D --> E[Record L₂ᴀ or R₂ᴀ]
+
+    F[Particle B Source Shortly After] --> G[Which-Path Detector OFF]
+    G --> D
+    D --> H[Record L₂ʙ or R₂ʙ]
+
+#Figure 3: Entangled Pair, One Particle Observed
+flowchart LR
+    A[Entangled Pair Source] --> B[Particle A]
+    A --> C[Particle B]
+
+    B --> D[Double Slit + Which-Path Detector ON]
+    D --> E[Record L₁ᴀ or R₁ᴀ]
+
+    C --> F[Second Identical Double Slit - No Which-Path Detector]
+    F --> G[Final Screen]
+    G --> H[Analyse B Unconditioned and Conditioned]
+
+#Figure 4: Measurement History / Sequential Conditioning
+flowchart LR
+    A[Single Particle Source] --> B[Observed Slit Stage 1]
+    B --> C[Observed Slit Stage 2]
+    C --> D[Observed Slit Stage 3]
+    D --> E[Observed Slit Stage N]
+    E --> F[Final Identical Double Slit - No Observer]
+    F --> G[Final Detection Screen]
+    G --> H[Record L_f or R_f]
