@@ -54,11 +54,14 @@ This would produce measurable correlations such as:
    - Make **Path B physically longer** than Path A (different propagation distances/flight times between first and second slit).
    - Place a **weak detector or scatterer** only on Path B after the first slit (very low interaction strength, preferably delocalized over a segment to avoid abrupt reset).
    - Optional: mild uniform weak potential or continuous phase accumulation along the extended Path B only.
-5. Particle propagates forward through the **second identical double slit**
+5. Particle propagates forward through the **second double slit, which is physically identical** to the first (same slit width, separation, orientation, and material).
 6. Particle lands on detection screen, inferring:
    - Left slit → **L₂**
    - Right slit → **R₂**
 7. Repeat for large sample size, systematically varying the Path B length difference and weak-marker strength.
+
+**Importance of Identical Second Slit**  
+The second double slit must be geometrically and materially identical to the first. This eliminates apparatus bias and ensures that any preference for same-path outcomes (L₁ → L₂ > L₁ → R₂ or stronger R bias after enhanced Path B) can be attributed to the particle retaining path-specific memory or confidence rather than differences in diffraction or transmission probabilities between the two stages.
 
 ---
 
