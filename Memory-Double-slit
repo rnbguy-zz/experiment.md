@@ -1,4 +1,4 @@
-# Testing Residual History Dependence in Sequential Quantum Measurements
+# Testing Residual Path-History Influence on Probability and Timing
 
 **Author:** Mina Moussa  
 **Date:** 2026-05-02  
@@ -7,308 +7,256 @@
 
 ## Overview
 
-This document proposes experimental tests designed to determine whether quantum systems are fully described by their current state, or whether **prior measurement history contributes additional measurable influence**.
+This document proposes a set of experiments designed to test whether particles exhibit **residual path-history dependence**, referred to here as a *confidence state bias*.
 
-The central question is:
+The central idea is:
 
-> Do particles behave solely based on their current quantum state, or can prior measurement history influence future probabilities in a way not captured by standard quantum mechanics?
+> Repeated forced preparation into a state may create a measurable bias or timing effect when the particle is later allowed to freely choose between states.
+
+This work investigates whether:
+
+1. Final path probabilities depend on prior path sequence  
+2. Arrival-time distributions depend on prior path sequence  
+
+---
+
+## Relation to Established Experiments
+
+Experiments such as the Stern–Gerlach experiment demonstrate:
+
+- Measurement prepares a state  
+- Repeating the same measurement yields the same result  
+
+However, those experiments do not test:
+
+> Whether the *history leading to a state* influences future behaviour when symmetry is restored.
+
+This proposal specifically targets that gap.
 
 ---
 
 ## Core Hypothesis
 
-### Residual History Dependence Hypothesis
+### Standard Quantum Mechanics
 
-Standard quantum mechanics assumes:
-
-> The future behaviour of a system depends only on its current quantum state.
-
-This work tests the alternative:
-
-> The probability of a measurement outcome may depend not only on the current state, but also on the **measurement history that led to that state**.
-
-Formally:
-
-\[
-P(\text{outcome}) \neq f(\text{current state only})
-\]
+- The system is fully described by its current quantum state  
+- Past history does not influence future outcomes beyond the state  
 
 ---
 
-## Critical Test: State-Equivalence, History-Inequivalence
+### Confidence State Bias Hypothesis
 
-This is the key experiment that distinguishes this proposal from known results.
-
-### Objective
-
-Test whether two systems in the **same final quantum state**, but with **different preparation histories**, produce identical measurement outcomes.
-
----
-
-### Experimental Design
-
-Prepare two ensembles of particles:
-
-#### History A
-1. Measure in basis Z → obtain UP  
-2. Measure again in basis Z → confirm UP  
-
-#### History B
-1. Measure in basis Z → obtain UP  
-2. Measure in orthogonal basis X → random result  
-3. Measure again in basis Z → obtain UP  
-
-At this point:
-
-> Both ensembles are in the same quantum state (UP in Z basis)
+- Repeated preparation may introduce a **small residual bias**  
+- This bias may appear as:
+  - Slight probability shifts  
+  - Slight timing (arrival-time) shifts  
 
 ---
 
-### Final Measurement
-
-Measure both ensembles again in basis Z.
-
----
-
-### Predictions
-
-#### Standard Quantum Mechanics
-
-\[
-P(\text{UP} | A) = P(\text{UP} | B) = 1
-\]
-
-#### Residual History Hypothesis
-
-\[
-P(\text{UP} | A) \neq P(\text{UP} | B)
-\]
-
-Even a very small deviation would indicate:
-
-- Non-Markovian behaviour  
-- Incomplete state description  
-- Residual dependence on measurement history  
-
----
-
-## Experiment 1 — Sequential Path Measurement with Asymmetric Evolution
-
-### Objective
-
-Test whether spatial path history influences future measurement outcomes beyond standard state evolution.
-
----
+## Experiment 1 — Probability Bias Test
 
 ### Setup
 
-1. Emit single particles
-2. First double slit with which-path detection:
-   - Left → L₁  
-   - Right → R₁  
-3. Apply controlled asymmetry to Path B:
-   - Increased path length  
-   - Weak distributed interaction  
-   - Continuous phase accumulation  
-4. Particle passes through second identical double slit  
-5. Record outcomes:
-   - L₂ or R₂  
+Particles pass through a sequence of forced path stages:
+
+- **L** = left path only open  
+- **R** = right path only open  
+- **(L / R)** = both paths open (free choice)  
 
 ---
 
-### Standard Prediction
+### Histories
 
-- No dependence on prior path beyond current state
-- Symmetric probabilities after control
+#### History A (repeated state)
 
----
+L → L → L → (L / R)
 
-### Hypothesis Prediction
+#### History B (state change introduced)
 
-- Small statistical bias:
-  \[
-  P(R₂ | R₁) \neq P(R₂)
-  \]
+L → L → R → (L / R)
 
 ---
 
-## Experiment 2 — Sequential Particle Correlation
+### Measurement
+
+Record:
+
+P(L_final | LLL)  
+P(R_final | LLL)
+
+P(L_final | LLR)  
+P(R_final | LLR)
+
+---
+
+### Standard Quantum Prediction
+
+P(L_final | LLL) = P(L_final | LLR)  
+P(R_final | LLL) = P(R_final | LLR)
+
+---
+
+### Confidence State Bias Prediction
+
+A small deviation:
+
+P(L_final | LLL) = 0.500 + ε  
+P(L_final | LLR) = 0.500  
+
+Where:
+
+ε ≠ 0 (very small, but statistically significant)
+
+---
+
+## Experiment 2 — Arrival-Time (Timing) Test
 
 ### Objective
 
-Test whether a second particle shows correlation with a previously measured particle without direct interaction.
+Test whether prior path history influences the **time taken to complete the final open-choice stage**.
+
+This is not interpreted as “decision time,” but as:
+
+> A shift in arrival-time distribution conditioned on prior history.
 
 ---
 
-### Setup
+### Histories
 
-1. Emit Particle A → measure path  
-2. Emit Particle B shortly after  
-3. Particle B passes through system unmeasured  
-4. Record outcomes  
+L → L → L → (L / R)  
+L → L → R → (L / R)
 
 ---
 
-### Standard Prediction
+### Measurement
 
-\[
-P(L₂^B | L₂^A) = 50\%
-\]
+For each particle, record:
 
----
-
-### Hypothesis Prediction
-
-\[
-P(L₂^B | L₂^A) > 50\%
-\]
+- History  
+- Final outcome (L or R)  
+- Arrival time at detector  
 
 ---
 
-## Experiment 3 — Entanglement-Based Influence
+### Analysis
 
-### Objective
+Compare separately:
 
-Test whether measurement of one particle influences the **unconditioned distribution** of its entangled partner.
-
----
-
-### Standard Prediction
-
-- No standalone bias:
-  \[
-  P(L_B) = 50\%
-  \]
+T(L_final | LLL) vs T(L_final | LLR)  
+T(R_final | LLL) vs T(R_final | LLR)
 
 ---
 
-### Hypothesis Prediction
+### Standard Quantum Prediction
 
-- Unconditioned shift:
-  \[
-  P(L_B) \neq 50\%
-  \]
+T(L_final | LLL) = T(L_final | LLR)  
+T(R_final | LLL) = T(R_final | LLR)
 
 ---
 
-## Experiment 4 — Measurement History Conditioning
+### Confidence State Bias Prediction
 
-### Objective
+Small measurable shift:
 
-Test whether repeated measurement history influences future outcomes after observation stops.
+Mean(T | LLL) ≠ Mean(T | LLR)
 
----
+Possible effects:
 
-### Setup
-
-1. Particle passes through N measured stages  
-2. Each stage records path  
-3. Final stage has no measurement  
-4. Record final outcome  
-
----
-
-### Standard Prediction
-
-\[
-P(L_f) = 50\%
-\]
-
----
-
-### Hypothesis Prediction
-
-\[
-P(L_f) = 0.5 \pm \epsilon
-\]
-
-where:
-
-\[
-\epsilon \neq 0 \text{ beyond experimental error}
-\]
-
----
-
-## Key Principle
-
-This work does NOT test:
-
-- Whether measurement sets a state  
-- Whether repeated measurements give the same result  
-
-These are already established.
-
-Instead, it tests:
-
-> Whether **measurement history contributes additional information beyond the quantum state**
-
----
-
-## Distinction from Stern–Gerlach Experiments
-
-The 0 demonstrates:
-
-- State preparation  
-- Repeatability of eigenstates  
-
-This work tests:
-
-> Whether identical quantum states reached via different histories produce identical future statistics.
+- Slight delay after repeated preparation  
+- Broader distribution  
+- Increased late-arrival tail  
 
 ---
 
 ## Experimental Requirements
 
-- Identical apparatus symmetry  
-- Elimination of phase and alignment bias  
-- Detector isolation  
-- Large statistical sample sizes  
-- Blind analysis where possible  
+To validate results, the following must be strictly controlled:
+
+- Identical path lengths  
+- Symmetric final stage  
+- Detector calibration (timing resolution and latency)  
+- Environmental stability (temperature, vibration, electromagnetic fields)  
+- Randomised trial order  
 
 ---
 
-## Validation Controls
+## Critical Control — Path Inversion
 
-- Left/right inversion  
-- Detector-off control  
-- Symmetric baseline runs  
-- Randomised path asymmetry  
-- Environmental stabilization  
+Repeat experiment with left/right physically swapped.
 
----
-
-## Success Criterion
-
-A valid signal is:
-
-> A statistically significant deviation from standard quantum predictions under conditions where final quantum states are identical.
+- If effect follows hardware → apparatus bias  
+- If effect follows history → potential signal  
 
 ---
 
-## Significance
+## Expected Signal Size
 
-If confirmed, this would imply:
+If present, effects are expected to be extremely small:
 
-- Non-Markovian quantum behaviour  
-- Residual history dependence  
-- Incomplete description by the wavefunction alone  
+### Probability shift
+
+ε ~ 0.001 or smaller  
+
+### Timing shift
+
+Δt ~ picoseconds or smaller  
+
+---
+
+## Data Collection Format
+
+| Trial | History | Final Outcome | Arrival Time |
+|------|--------|--------------|-------------|
+| 1 | LLL | L | 12.403 ns |
+| 2 | LLR | R | 12.411 ns |
+| 3 | LLL | R | 12.407 ns |
+
+---
+
+## Success Criteria
+
+A valid result requires:
+
+1. Statistically significant difference  
+2. Reproducibility  
+3. Survival under all control tests  
+
+---
+
+## Null Result Interpretation
+
+If no difference is observed:
+
+> The results support standard quantum mechanics:  
+> no measurable influence from prior path history beyond the current state.
+
+---
+
+## Positive Result Interpretation
+
+If differences are observed:
+
+Possible implications:
+
+- Residual path-history dependence  
+- Non-Markovian behaviour  
+- Incomplete state description  
+- Experimental artifact (must be ruled out)
 
 ---
 
 ## Summary
 
-| Test | Standard Prediction | Hypothesis |
-|------|------------------|-----------|
-| State-equivalent histories | Identical outcomes | Slight deviation |
-| Sequential path test | No memory | Small bias |
-| Particle correlation | Independent | Correlated |
-| History conditioning | No dependence on N | ε deviation |
+| Test | Standard Prediction | Confidence Bias Prediction |
+|------|------------------|--------------------------|
+| Probability | No difference | Small ε shift |
+| Timing | No difference | Small Δt shift |
+| History effect | None | Weak residual influence |
 
 ---
 
 ## Final Question
 
-> Are quantum systems fully described by their current state, or does prior measurement history contribute to future behaviour?
+> After repeated forced preparation into a state, does the particle behave identically when symmetry is restored, or does prior history leave a measurable trace in probability or timing?
 
 ---
