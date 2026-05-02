@@ -1,5 +1,4 @@
-# Confidence State Bias Test
-## Testing Residual Path-History Influence on Probability and Timing
+# Testing Residual Path-History Influence on Probability and Timing
 
 **Author:** Mina Moussa  
 **Date:** 2026-05-02  
@@ -16,23 +15,55 @@ The central idea is:
 
 This work investigates whether:
 
-1. Final path probabilities depend on prior path sequence  
-2. Arrival-time distributions depend on prior path sequence  
+1. Final measurement probabilities depend on prior preparation sequence  
+2. Arrival-time distributions depend on prior preparation sequence  
 
 ---
 
 ## Relation to Established Experiments
 
-Experiments such as the Stern–Gerlach experiment demonstrate:
+Experiments such as the 0 and related sequential measurement studies have extensively tested sequences of the form:
 
-- Measurement prepares a state  
+Z → Z → Z → X Z → Z → X → X
+
+Where:
+- **Z** = repeated preparation and measurement in the same basis  
+- **X** = measurement in a different basis  
+
+These experiments demonstrate:
+
+- Measurement prepares a quantum state  
 - Repeating the same measurement yields the same result  
+- Changing the measurement basis produces outcomes consistent with standard quantum probabilities  
 
-However, those experiments do not test:
+---
 
-> Whether the *history leading to a state* influences future behaviour when symmetry is restored.
+## Established Result (Standard Quantum Mechanics)
 
-This proposal specifically targets that gap.
+Across these experiments:
+
+P(X | Z → Z → Z → X) = P(X | Z → Z → X → X)
+
+within experimental precision.
+
+This reflects the standard assumption:
+
+> The system is fully described by its current quantum state, and prior history does not influence future outcomes beyond that state.
+
+---
+
+## Motivation for This Work
+
+While the above principle has been extensively tested, prior experiments were designed to confirm:
+
+- State preparation consistency  
+- Basis-dependent probabilities  
+
+They were **not optimized to detect extremely small, history-dependent deviations**.
+
+This work reframes the same structures to test:
+
+> Whether higher-precision measurements reveal a small residual dependence on recent preparation history.
 
 ---
 
@@ -48,57 +79,25 @@ This proposal specifically targets that gap.
 ### Confidence State Bias Hypothesis
 
 - Repeated preparation may introduce a **small residual bias**  
-- This bias may appear as:
-  - Slight probability shifts  
-  - Slight timing (arrival-time) shifts  
+- This bias may manifest as:
+  - Slight probability shifts (ε)  
+  - Slight timing (arrival-time) shifts (Δt)  
 
 ---
 
 ## Experiment 1 — Probability Bias Test
 
-### Setup
+### Objective
 
-Particles pass through a sequence of path stages:
-
-- **L** = left path only open  
-- **R** = right path only open  
-- **(L / R)** = both paths open (free choice)  
+Detect a small deviation in final measurement probabilities conditioned on prior history.
 
 ---
 
-## State Preparation Method (Critical)
+### Sequential Structure
 
-At each preparation stage, the system naturally produces two possible paths (L and R).
+Using the established framework:
 
-To enforce a specific path:
-
-- The unwanted path is **physically blocked or absorbed**  
-- Only particles traveling the desired path are allowed to continue  
-
-This is equivalent to state preparation via filtering, as used in the Stern–Gerlach experiment.
-
-### Examples
-
-- To prepare **L**, the R path is blocked  
-- To prepare **R**, the L path is blocked  
-
-As a result:
-
-> All particles reaching the next stage are guaranteed to have followed the intended path sequence.
-
-This ensures that histories such as `LLL` and `LLR` are physically well-defined and experimentally controlled.
-
----
-
-### Histories
-
-#### History A (repeated state)
-
-L → L → L → (L / R)
-
-#### History B (state change introduced)
-
-L → L → R → (L / R)
+Z → Z → Z → X Z → Z → X → X
 
 ---
 
@@ -106,48 +105,44 @@ L → L → R → (L / R)
 
 Record:
 
-- P(L_final | LLL)  
-- P(R_final | LLL)  
-- P(L_final | LLR)  
-- P(R_final | LLR)  
+P(X | ZZZX) P(X | ZZXX)
 
 ---
 
 ### Standard Quantum Prediction
 
-- P(L_final | LLL) = P(L_final | LLR)  
-- P(R_final | LLL) = P(R_final | LLR)  
+P(X | ZZZX) = P(X | ZZXX)
 
 ---
 
-### Confidence State Bias Prediction
+### Confidence Bias Prediction
 
-A small deviation:
-
-- P(L_final | LLL) = 0.500 + ε  
-- P(L_final | LLR) = 0.500  
+P(X | ZZZX) = P(X | ZZXX) + ε
 
 Where:
 
-- ε ≠ 0 (very small, but statistically significant)
+- ε is expected to be extremely small  
+- and may fall below prior experimental detection thresholds  
 
 ---
 
-## Experiment 2 — Arrival-Time (Timing) Test
+### Positioning
+
+> This experiment does not contradict prior results, but extends them by increasing precision to search for subtle deviations.
+
+---
+
+## Experiment 2 — Timing (Arrival-Time) Test
 
 ### Objective
 
-Test whether prior path history influences the **time taken to complete the final open-choice stage**.
-
-This is not interpreted as “decision time,” but as:
-
-> A shift in arrival-time distribution conditioned on prior history.
+Determine whether prior preparation history produces measurable differences in **arrival-time distributions**, even when probabilities remain identical.
 
 ---
 
-### Histories
+### Sequential Structure
 
-L → L → L → (L / R) L → L → R → (L / R)
+Z → Z → Z → X Z → Z → X → X
 
 ---
 
@@ -155,60 +150,95 @@ L → L → L → (L / R) L → L → R → (L / R)
 
 For each particle, record:
 
-- History  
-- Final outcome (L or R)  
-- Arrival time at detector  
+- Sequence (ZZZX or ZZXX)  
+- Final outcome  
+- Arrival time  
 
 ---
 
 ### Analysis
 
-Compare separately:
+Compare:
 
-- T(L_final | LLL) vs T(L_final | LLR)  
-- T(R_final | LLL) vs T(R_final | LLR)  
+Mean(T | ZZZX) vs Mean(T | ZZXX)
+
+and full distribution shapes.
 
 ---
 
 ### Standard Quantum Prediction
 
-- T(L_final | LLL) = T(L_final | LLR)  
-- T(R_final | LLL) = T(R_final | LLR)  
+T(X | ZZZX) = T(X | ZZXX)
 
 ---
 
-### Confidence State Bias Prediction
+### Confidence Bias Prediction
 
-Small measurable shift:
-
-- Mean(T | LLL) ≠ Mean(T | LLR)
+T(X | ZZZX) ≠ T(X | ZZXX)
 
 Possible effects:
 
-- Slight delay after repeated preparation  
+- Small mean shift (Δt)  
 - Broader distribution  
 - Increased late-arrival tail  
 
 ---
 
-## Experimental Requirements
+## Interpretation Framework
 
-To validate results, the following must be strictly controlled:
+### Case 1 — No effect observed
 
-- Identical path lengths  
-- Symmetric final stage  
-- Detector calibration (timing resolution and latency)  
-- Environmental stability (temperature, vibration, electromagnetic fields)  
-- Randomised trial order  
+ε ≈ 0 Δt ≈ 0
+
+→ Consistent with standard quantum mechanics  
 
 ---
 
-## Critical Control — Path Inversion
+### Case 2 — Probability deviation observed
 
-Repeat experiment with left/right physically swapped.
+ε ≠ 0
+
+→ Evidence of residual state-history influence  
+
+---
+
+### Case 3 — No probability deviation, but timing deviation
+
+ε ≈ 0 Δt ≠ 0
+
+→ Suggests deeper dynamical or non-Markovian behaviour  
+
+---
+
+### Case 4 — Both effects observed
+
+→ Strong evidence of residual path-history dependence  
+
+---
+
+## Experimental Requirements
+
+To validate results:
+
+- Identical path lengths  
+- Symmetric final measurement stage  
+- High-precision detector calibration (probability and timing)  
+- Environmental stability (temperature, vibration, electromagnetic fields)  
+- Randomized trial ordering  
+
+---
+
+## Critical Control — Basis / Path Inversion
+
+Repeat experiments with:
+
+- Measurement basis swapped  
+- Physical paths inverted  
+
+Interpretation:
 
 - If effect follows hardware → apparatus bias  
-- If effect follows history → potential signal  
+- If effect follows sequence → potential signal  
 
 ---
 
@@ -216,18 +246,23 @@ Repeat experiment with left/right physically swapped.
 
 If present, effects are expected to be extremely small:
 
-- Probability shift: ε ~ 0.001 or smaller  
-- Timing shift: Δt ~ picoseconds or smaller  
+- Probability shift:
+
+ε ~ 0.001 or smaller
+
+- Timing shift:
+
+Δt ~ picoseconds or smaller
 
 ---
 
 ## Data Collection Format
 
-| Trial | History | Final Outcome | Arrival Time |
-|------|--------|--------------|-------------|
-| 1 | LLL | L | 12.403 ns |
-| 2 | LLR | R | 12.411 ns |
-| 3 | LLL | R | 12.407 ns |
+| Trial | Sequence | Final Outcome | Arrival Time |
+|------|---------|--------------|-------------|
+| 1 | ZZZX | X | 12.403 ns |
+| 2 | ZZXX | X | 12.411 ns |
+| 3 | ZZZX | X | 12.407 ns |
 
 ---
 
@@ -235,31 +270,27 @@ If present, effects are expected to be extremely small:
 
 A valid result requires:
 
-1. Statistically significant difference  
+1. Statistical significance  
 2. Reproducibility  
-3. Survival under all control tests  
+3. Robustness under all control tests  
 
 ---
 
 ## Null Result Interpretation
 
-If no difference is observed:
-
-> The results support standard quantum mechanics:  
-> no measurable influence from prior path history beyond the current state.
+> Supports standard quantum mechanics:  
+> no measurable influence from prior history beyond the current state  
 
 ---
 
 ## Positive Result Interpretation
-
-If differences are observed:
 
 Possible implications:
 
 - Residual path-history dependence  
 - Non-Markovian behaviour  
 - Incomplete state description  
-- Experimental artifact (must be ruled out)
+- Experimental artifact (must be ruled out)  
 
 ---
 
@@ -271,3 +302,8 @@ Possible implications:
 | Timing | No difference | Small Δt shift |
 | History effect | None | Weak residual influence |
 
+---
+
+## Final Question
+
+> After repeated preparation into a state, does the system behave identically when conditions change, or does prior history leave a measurable trace in probability or timing?
