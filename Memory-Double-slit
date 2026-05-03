@@ -1,15 +1,13 @@
+# Testing Residual Timing Effects After State Stabilisation
 
-Testing Residual Timing Effects After State Stabilisation
+**A timing-resolved test of history-dependent behaviour in sequential quantum preparation**
 
-A timing-resolved test of history-dependent behaviour in sequential quantum preparation
-
-Author: Mina Moussa
-Date: 2026-05-03 (Updated)
-
+**Author:** Mina Moussa  
+**Date:** 2026-05-03 (Updated)
 
 ---
 
-Overview
+## Overview
 
 This proposal tests whether prior state-transition history can leave a measurable timing signature even after a system is prepared into a stable, repeated state.
 
@@ -17,327 +15,232 @@ Standard quantum mechanics predicts:
 
 > Once a system is prepared into a given state, all future observables depend only on that state, not on how it was reached.
 
-
-
 This work tests whether this holds for timing observables at high precision, with an explicit emphasis on scaling the depth of prior transitions.
-
 
 ---
 
-Core Question
+## Core Question
 
 > Does a system that has undergone a variable (and potentially very large) number of prior state transitions exhibit identical timing behaviour to a system prepared directly into the same final state?
-
-
 
 Specifically:
 
 > After a period of deep alternating state changes, does a subsequent repeated same-state phase show any residual timing deviation, and does this residual scale with transition depth?
 
-
-
-
 ---
 
-Experimental Concept
+## Experimental Concept
 
 Two preparation conditions are constructed, with history depth treated as a variable parameter:
 
-Condition A — Direct Stabilisation
-
+**Condition A — Direct Stabilisation**
 U → U → U → U → U → U → U → U
 
-Condition B — Deep Alternating History + Stabilisation
-
+**Condition B — Deep Alternating History + Stabilisation**
 (U → D) repeated N times → U → U → U → U → U
 
 Only the final repeated Up phase is measured:
-
 U → U → U → U → U
 
-History Depth Variation:
-Run the experiment for multiple values of N (e.g., , , , ).
-
+**History Depth Variation:**
+Run the experiment for multiple values of N.
 
 ---
 
-Measurement Strategy
+## Measurement Strategy
 
 Measurements are performed only on the final repeated-state phase, excluding the switching region.
 
-Primary observables:
+**Primary observables:**
+* Mean arrival time
+* Timing variance
+* Distribution shape (tails, skewness)
 
-Mean arrival time
-
-Timing variance
-
-Distribution shape (tails, skewness)
-
-
-Secondary analysis:
-
+**Secondary analysis:**
 Fit residuals to:
-
-
-\text{delay}(k) = A(N) \cdot e^{-k/\tau}
-
+delay(k) = A(N) * e^(-k/τ)
 
 ---
 
-Standard Quantum Prediction
+## Standard Quantum Prediction
 
 If the system is fully described by its current state:
-
-\Delta T_{\text{final}} = 0,\quad \Delta \text{Var}_{\text{final}} = 0
-
+ΔT_final = 0,  ΔVar_final = 0
 independent of history depth N, within experimental uncertainty.
-
 
 ---
 
-Alternative Hypothesis
+## Alternative Hypothesis
 
 If prior transitions leave residual structure:
 
-> The final repeated-state phase may exhibit a transient timing deviation whose initial amplitude  scales with the number of prior alternations.
+> The final repeated-state phase may exhibit a transient timing deviation whose initial amplitude scales with the number of prior alternations.
 
+**Model:**
+delay(k) = A(N) * e^(-k/τ)
 
-
-Model:
-
-\text{delay}(k) = A(N) \cdot e^{-k/\tau}
-
-Predicted effects:
-
-Larger initial delay after deeper history
-
-Gradual convergence to baseline timing
-
-Possible increased variance or asymmetry early in the stable phase
-
-
+**Predicted effects:**
+* Larger initial delay after deeper history
+* Gradual convergence to baseline timing
+* Possible increased variance or asymmetry early in the stable phase
 
 ---
 
-Systematic Scaling Constraint (Critical Test Condition)
+## Systematic Scaling Constraint (Critical Test Condition)
 
 A key requirement is to distinguish any history-dependent timing effect from ordinary system-induced delays.
 
 Known physical mechanisms may introduce timing changes that scale with:
-
-Number of operations
-
-Energy input / switching activity
-
-Thermal load
-
-Path-length variation
-
-Detector response and calibration drift
-
+* Number of operations
+* Energy input / switching activity
+* Thermal load
+* Path-length variation
+* Detector response and calibration drift
 
 Therefore, a valid history-dependent signal must satisfy:
 
->  scales with transition count  in a manner that cannot be explained by known system-level scaling effects.
-
-
+> Scales with transition count N in a manner that cannot be explained by known system-level scaling effects.
 
 To ensure this:
-
-System-induced contributions must be independently measured or bounded
-
-Control sequences must match total operation count, energy input, and runtime
-
-Residual scaling must persist after subtraction of all known effects
-
-
+* System-induced contributions must be independently measured or bounded.
+* Control sequences must match total operation count, energy input, and runtime.
+* Residual scaling must persist after subtraction of all known effects.
 
 ---
 
-Key Principle
+## Key Principle
 
 The experiment separates:
-
-Known system-induced delay (during switching)
-
-Residual delay after switching has stopped
-
+* Known system-induced delay (during switching)
+* Residual delay after switching has stopped
 
 History depth is varied to probe accumulation effects, while measurement is restricted to the stabilised phase.
 
+---
+
+## Critical Controls
+
+**System Controls**
+* Stable interferometer path length (active feedback)
+* Detector timing calibration
+* Laser pulse stability
+* Monitoring of thermal/electrical load during deep switching
+
+**Logical Controls**
+* Swap U/D encoding
+* Reverse sequence ordering
+* Randomised sequences
+* Interleaved A/B runs to cancel slow drift
+* Matched average power and duty cycle
+
+**Reset Control**
+* Full system reset between runs
+
+**Depth-Specific Checks**
+* Verify deeper histories do not introduce new classical systematics
 
 ---
 
-Critical Controls
+## Residual Extraction
 
-System Controls
+ΔT_measured = ΔT_system + ΔT_history(N) + noise
 
-Stable interferometer path length (active feedback)
-
-Detector timing calibration
-
-Laser pulse stability
-
-Monitoring of thermal/electrical load during deep switching
-
-
-Logical Controls
-
-Swap U/D encoding
-
-Reverse sequence ordering
-
-Randomised sequences
-
-Interleaved A/B runs to cancel slow drift
-
-Matched average power and duty cycle
-
-
-Reset Control
-
-Full system reset between runs
-
-
-Depth-Specific Checks
-
-Verify deeper histories do not introduce new classical systematics
-
-
-
----
-
-Residual Extraction
-
-\Delta T_{\text{measured}} = \Delta T_{\text{system}} + \Delta T_{\text{history}}(N) + \text{noise}
-
-\Delta T_{\text{residual}}(N) = \Delta T_{\text{measured}} - \Delta T_{\text{system}}
+ΔT_residual(N) = ΔT_measured - ΔT_system
 
 Test whether:
-
-\Delta T_{\text{residual}}(N) \neq 0
-
-and whether it scales with .
-
+ΔT_residual(N) ≠ 0
+and whether it scales with N.
 
 ---
 
-Sensitivity and Scale
-​Typical detector jitter: ~10–20 ps (assuming state-of-the-art SNSPDs)
-​Target mean sensitivity: ~0.004 ps
-​Methodology: Achieved via the Standard Error of the Mean (\text{SEM} = \frac{\sigma}{\sqrt{N}}), where a 20 ps jitter over N = 25,000,000 valid probes resolves the target sensitivity.
+## Sensitivity and Scale
 
-Required statistics:
+* **Typical detector jitter:** ~10–20 ps (assuming state-of-the-art SNSPDs)
+* **Target mean sensitivity:** ~0.004 ps
+* **Methodology:** Achieved via the Standard Error of the Mean (SEM = σ / √N), where a 20 ps jitter over N = 25,000,000 valid probes resolves the target sensitivity.
 
-N_{\text{events}} \approx \left(\frac{\text{jitter}}{\Delta T}\right)^2
+**Required statistics:**
+N_events ≈ (jitter / ΔT)^2
 
-Example:
-
- ps
-
-jitter ~18 ps
-
-
-N \sim 10^9
+**Extreme Depth Example:**
+* ΔT ~ 0.001 ps
+* jitter ~18 ps
+* N ~ 10^9
 
 Deep histories may allow amplification of detectable signals, but must be validated against systematic scaling constraints.
 
-
 ---
 
-Interpretation
+## Interpretation
 
-Null Result
-
-No residual detected
-
-No scaling with 
-
-
+**Null Result**
+* No residual detected
+* No scaling with N
 → Supports standard quantum mechanics
 
-
----
-
-Positive Result
-
+**Positive Result**
 Residual timing detected that:
-
-Appears only after alternating history
-
-Scales with history depth 
-
-Persists into repeated-state phase
-
-Decays over time
-
-
+* Appears only after alternating history
+* Scales with history depth N
+* Persists into repeated-state phase
+* Decays over time
 → Indicates a history-dependent contribution beyond standard state description
 
-
 ---
 
-Significance
+## Significance
 
 This experiment probes a minimally explored regime:
-
-Timing as a primary observable
-
-Post-stabilisation behaviour
-
-Variable transition depth ()
-
-High-statistics detection
-
+* Timing as a primary observable
+* Post-stabilisation behaviour
+* Variable transition depth (N)
+* High-statistics detection
 
 It tests whether extremely small history-dependent timing effects exist below current detection limits.
 
+---
+
+## Summary
+
+This work proposes a timing-resolved test of whether prior state-transition history — varied in depth — leaves a measurable residual signature after a system enters a stable repeated state.
+
+By isolating the stabilised phase and enforcing strict control of system-induced scaling, the experiment probes whether standard state-based descriptions fully capture system behaviour.
 
 ---
 
-Summary
-
-This work proposes a timing-resolved test of whether prior state-transition history — varied in depth — leaves a measurable residual signature after a system enters a stable repeated state. By isolating the stabilised phase and enforcing strict control of system-induced scaling, the experiment probes whether standard state-based descriptions fully capture system behaviour.
-
-
----
-
-Plain English Summary
+## Plain English Summary
 
 We compare two systems that end up in the same stable state:
+* One got there directly
+* One got there after lots of flipping
 
-One got there directly
-
-One got there after lots of flipping
-
-
-Then we measure only after they stabilise.
-
-Quantum mechanics says they should behave the same.
+Then we measure only after they stabilise. Quantum mechanics says they should behave the same.
 
 This experiment checks whether:
 
 > After many transitions, a tiny timing effect remains that hasn’t been measured before — and whether it grows with how much history came before.
 
+---
 
-addition notes: Statistical Power, Hardware Constraints, and Systematic Validity
+## Addendum: Statistical Power, Hardware Constraints, and Systematic Validity
+
 To push this experiment beyond historical double-slit and weak measurement baselines, the system must clear the 5σ (five-sigma) threshold for statistical significance while strictly guarding against systematic hardware bias.
 
-1. Statistical Baselines and Particle Loads
-To isolate a probability shift of \Delta P \sim 10^{-3} and a timing shift of \Delta T \sim 1 ps from background probabilistic noise, the experiment requires massive statistical power:
-Minimum Probe Count: Reaching a 5σ confidence level requires a minimum of 25,000,000 valid neutral probe measurements per condition (Uniform vs. Mixed).
-Total System Load: Assuming a moderate conditioning sequence of N = 1,000 particles per measurement cycle, the system must continuously process approximately 50 billion total particles to complete the dataset for both conditions.
+### 1. Statistical Baselines and Particle Loads
+To isolate a probability shift of ΔP ~ 10^-3 and a timing shift of ΔT ~ 1 ps from background probabilistic noise, the experiment requires massive statistical power:
+* **Minimum Probe Count:** Reaching a 5σ confidence level requires a minimum of 25,000,000 valid neutral probe measurements per condition (Uniform vs. Mixed).
+* **Total System Load:** Assuming a moderate conditioning sequence of N = 1,000 particles per measurement cycle, the system must continuously process approximately 50 billion total particles to complete the dataset for both conditions.
 
-2. Hardware Requirements
+### 2. Hardware Requirements
 Executing this volume without succumbing to detector drift requires state-of-the-art quantum optics technology:
-Photon Source: A high-repetition-rate single-photon source operating in the 1 GHz to 2.5 GHz range.
-Timing Resolution: Superconducting Nanowire Single-Photon Detectors (SNSPDs) with a native timing jitter of 20 ps or lower. The massive probe count will utilize the Standard Error of the Mean to mathematically resolve a 1 ps timing shift against this native jitter.
+* **Photon Source:** A high-repetition-rate single-photon source operating in the 1 GHz to 2.5 GHz range.
+* **Timing Resolution:** Superconducting Nanowire Single-Photon Detectors (SNSPDs) with a native timing jitter of 20 ps or lower. The massive probe count will utilize the Standard Error of the Mean to mathematically resolve a 1 ps timing shift against this native jitter.
 
-3. The "State Change" Trap (Systematic Validity)
+### 3. The "State Change" Trap (Systematic Validity)
 While the 50-billion particle dataset effectively eliminates random statistical noise, it introduces a severe vulnerability to systematic error: accidental standard state changes.
-In the Mixed History condition, the alternating Z+ and Z− interactions are theoretically assumed to perfectly cancel.
+* In the Mixed History condition, the alternating Z+ and Z- interactions are theoretically assumed to perfectly cancel.
+* However, if the electro-optic modulators or waveplates applying these interactions are asymmetrical by even a fraction of a percent, the condition will unintentionally leave the system in an altered standard quantum state.
+* The detectors would flawlessly measure a timing difference, but it would reflect hardware asymmetry rather than a true non-Markovian history effect.
 
-However, if the electro-optic modulators or waveplates applying these interactions are asymmetrical by even a fraction of a percent, the condition will unintentionally leave the system in an altered standard quantum state.
-The detectors would flawlessly measure a timing difference, but it would reflect hardware asymmetry rather than a true non-Markovian history effect.
-To definitively isolate the non-Markovian signal:
-The statistical power must be paired with rigorous logical controls. The measured effect must survive Basis Inversion (Z+ \leftrightarrow Z−) and Path Swaps (physical inversion of interferometer arms). If the measured timing shift accurately tracks the logical history pattern regardless of the physical hardware orientation, it confirms a genuine history-dependent correlation rather than a standard Markovian state change.
+**To definitively isolate the non-Markovian signal:**
+The statistical power must be paired with rigorous logical controls. The measured effect must survive Basis Inversion (Z+ ↔ Z-) and Path Swaps (physical inversion of interferometer arms). If the measured timing shift accurately tracks the logical history pattern regardless of the physical hardware orientation, it confirms a genuine history-dependent correlation rather than a standard Markovian state change.
