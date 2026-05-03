@@ -1,302 +1,282 @@
-# Proposal: Testing History-Dependent Effects via Continuous Weak Interaction and Collective Conditioning
-
-**Author:** Mina Moussa  
-**Date:** 2026-05-03  
 
 ---
 
-## Title
+Testing Residual Timing Effects After State Stabilisation
 
-**A Timing-Resolved Test of Non-Markovian, History-Dependent Effects in Sequential Quantum Interactions**
+A timing-resolved test of history-dependent behaviour in sequential quantum preparation
 
----
-
-## Motivation
-
-Standard quantum mechanics assumes:
-
-> The system’s future behaviour is fully determined by its current quantum state (wavefunction or density matrix), independent of how that state was reached.
-
-This implies **Markovian behaviour**:
-
-
-Same state → same outcomes (probability, phase, timing)
-
-This proposal tests a sharper question:
-
-> Can two systems that are experimentally indistinguishable in state still exhibit different behaviour due to prior interaction history?
-
-The focus is on timing and variance, which are underutilized observables in foundational tests.
+Author: Mina Moussa
+Date: 2026-05-03
 
 
 ---
 
-Core Hypothesis
+Overview
 
-- Null Hypothesis (Standard QM)
+This proposal tests whether prior state-transition history can leave a measurable timing signature even after a system is prepared into a stable, repeated state.
 
-- All measurable outcomes depend only on the current quantum state
+Standard quantum mechanics predicts:
 
-- Sequential interactions matter only insofar as they modify that state
+> Once a system is prepared into a given state, all future observables depend only on that state, not on how it was reached.
 
-- No additional timing delay, jitter, or variance beyond known physical effects
 
+
+This work challenges whether this holds for timing observables at high precision.
 
 
 ---
 
-Alternative Hypothesis (History-Dependent / Non-Markovian Effect)
+Core Question
 
-- Prior interaction sequences leave residual correlations or structure
+> Does a system that has undergone many prior state transitions exhibit identical timing behaviour to a system prepared directly into the same final state?
 
-- These may not be fully captured by the reduced quantum state
 
-Observable consequences may include:
 
-- Small probability shifts
+Specifically:
 
-- Phase shifts
+> After a period of alternating state changes, does a subsequent repeated same-state phase show any residual timing deviation?
 
-- Arrival-time delays
 
-- Increased timing variance
 
-- Distribution broadening or tail effects
 
 ---
 
 Experimental Concept
 
-The experiment combines two key elements:
+Two preparation conditions are constructed:
 
-1. Continuous weak interaction (no full reset)
+Condition A — Direct Stabilisation
 
-2. Collective conditioning followed by a neutral probe particle
+U → U → U → U → U → U → U → U
 
+Condition B — Alternating History + Stabilisation
 
----
+U → D → U → D → U → D → U → D → U → U → U → U → U
 
-System Design
+Only the final repeated Up phase is measured:
 
-A shared interferometric system (e.g., Mach–Zehnder interferometer or optical cavity) is used:
-
-Particles are injected sequentially
-
-The system is not fully reset between particles
-
-Weak interactions allow gradual accumulation of system-environment correlations
-
+U → U → U → U → U
 
 
 ---
 
-Phase 1 — Collective Conditioning
+Measurement Strategy
 
-A sequence of particles is sent through the system to establish a history-dependent condition.
+Measurements are performed only on the final repeated-state phase, excluding the switching region.
 
-Condition A — Uniform history
+Primary observable:
 
-- N particles: weak Z+ interactions
+Mean arrival time
 
-Condition B — Mixed history
+Timing variance
 
-- N particles: alternating weak Z+, Z− interactions
+Distribution shape (tails, skewness)
 
-Where:
-
-- Interactions are weak (partial which-path information)
-
-- The system evolves continuously without full collapse/reset
-
-
-
----
-
-Phase 2 — Neutral Probe Particle
-
-A final particle is injected in a neutral superposition state (X-basis):
-
-Probe: |+x⟩ (no predefined which-path preference)
-
-This particle serves as a test of whether prior conditioning affects future behaviour.
-
-
----
-
-Measurements
-
-All measurements are performed on the probe particle only.
-
-Primary observables:
-
-- Output probability distribution at ~0.0001 variation
-
-- Interference visibility
-
-- Interference phase
-
-
-Timing observables (central to this proposal):
-
-- Mean arrival time
-
-- Timing variance
-
-- Distribution width
-
-- Late-arrival tail probability
-
-- Outcome-conditioned timing
-
-
-
----
-
-Key Comparisons
-
-Probe | uniform history vs probe | mixed history
-
-Measured differences:
-
-ΔP       = probability difference
-Δphase   = interference phase shift
-ΔT       = mean arrival-time shift
-ΔVar(T)  = timing variance difference
 
 
 ---
 
 Standard Quantum Prediction
 
-If the system is correctly described by standard QM:
+If the system is fully described by its current state:
 
-The probe particle’s behaviour depends only on:
-
-its prepared state
-
-the current system state
-
-
-
-If conditioning leads to identical effective system states:
-
-ΔP = 0
-Δphase = 0
-ΔT = 0
-ΔVar(T) = 0
+ΔT_final = 0
+ΔVar_final = 0
 
 within experimental uncertainty.
+
+That is:
+
+> The timing distribution of the final repeated Up phase is independent of prior history.
+
+
 
 
 ---
 
-Alternative Prediction (History-Dependent Effect)
+Alternative Hypothesis
 
-If prior history influences behaviour beyond the current state:
+If prior transitions leave residual structure:
 
-ΔP ≠ 0
-Δphase ≠ 0
-ΔT ≠ 0
-ΔVar(T) ≠ 0
+> The final repeated-state phase may exhibit a transient timing deviation.
 
-Expected signatures may include:
 
-Subtle phase shifts
 
-Reduced or asymmetric interference visibility
+This can be modelled as:
 
-Timing delay (interpretable as “hesitation”)
+delay(k) = A × exp(-k / τ)
 
-Increased timing variance or jitter
+Where:
 
-Broadened distributions or enhanced late-arrival tails
+k = index within repeated-state phase
 
+A = initial residual timing offset
+
+τ = relaxation timescale
+
+
+Predicted effects:
+
+Initial delay in first few repeated-state events
+
+Gradual convergence to baseline timing
+
+Possible increased variance or asymmetric distribution
+
+
+
+---
+
+Key Principle
+
+The experiment explicitly separates:
+
+Known system-induced delay (during switching)
+
+Residual delay after switching has stopped
+
+
+Only the latter is tested.
 
 
 ---
 
 Critical Controls
 
-To ensure validity, the following controls are required:
+To isolate the effect:
 
-System controls
+System Controls
 
-Identical path lengths
+Stable interferometer path length
 
-Stable interferometer alignment
+Detector timing calibration
 
-Detector latency calibration
-
-
-Logical controls
-
-Basis inversion (Z+ ↔ Z−)
-
-Path swap (physical inversion of interferometer arms)
-
-Randomised sequence ordering
+Laser pulse stability
 
 
-Reset control
+Logical Controls
+
+Swap U/D encoding
+
+Reverse sequence ordering
+
+Randomised sequences
+
+
+Reset Control
 
 Full system reset between runs
 
 
-Interpretation:
 
-Effect disappears after reset → environment memory (standard explanation)
-Effect persists after reset → non-standard behaviour
+---
+
+Residual Extraction
+
+Measured timing:
+
+ΔT_measured = ΔT_system + ΔT_history + noise
+
+Subtract known system contribution:
+
+ΔT_residual = ΔT_measured - ΔT_system
+
+Test whether:
+
+ΔT_residual ≠ 0
+
+and follows decay structure.
 
 
 ---
 
-Artifact Rejection Criteria
+Sensitivity and Scale
 
-Reject result as artifact if:
+Given:
 
-Effect tracks hardware configuration
-Effect correlates with detector drift
-Effect disappears after calibration
+Detector jitter ≈ 10–20 ps
 
-Consider result meaningful if:
+Target timing sensitivity ≈ 0.001–0.01 ps
 
-Effect tracks logical history pattern
-Effect survives path swaps and inversion
-Effect appears consistently in timing AND probability/phase
-Effect scales with conditioning length (N)
+
+Detection requires:
+
+N ≈ (jitter / ΔT)^2
+
+Example:
+
+ΔT ≈ 0.002 ps
+
+jitter ≈ 18 ps
+
+
+N ≈ 10^9 measurements
 
 
 ---
 
-Expected Signal Scale
+Feasibility Insight
 
-Given the subtle nature of the hypothesis:
+This implies:
 
-Probability shift: ε ~ 10⁻³ or smaller
-Timing shift: Δt ~ picoseconds or smaller
-Variance change: small but statistically resolvable
+The effect, if present, is far below single-event resolution
 
-Large datasets will be required.
+Detection relies on statistical averaging over large datasets
+
+Timing must be measured at sub-picosecond effective precision
+
+
+
+---
+
+Interpretation
+
+Null Result
+
+No detectable residual timing:
+
+> Supports standard quantum mechanics
+Confirms no history-dependent timing effect
+
+
+
+
+---
+
+Positive Result
+
+Residual timing detected:
+
+Appears only after alternating history
+
+Persists into repeated-state phase
+
+Decays over time
+
+
+Implication:
+
+> Indicates a history-dependent contribution not captured by standard state description
+
+
 
 
 ---
 
 Significance
 
-A confirmed deviation would imply:
+This experiment targets a minimally explored regime:
 
-Incomplete description by Markovian quantum state evolution
+Timing as a primary observable
 
-Existence of residual history-dependent correlations
+Post-stabilisation behaviour
 
-Potential extension to non-Markovian or hidden-state frameworks
-
-New experimental access via timing-based observables
+High-statistics detection of small effects
 
 
-A null result would reinforce:
+It does not assume new physics, but tests whether:
 
-> Standard quantum mechanics fully captures all observable effects in such systems.
+> Extremely small history-dependent timing effects exist below current detection limits.
 
 
 
@@ -305,101 +285,234 @@ A null result would reinforce:
 
 Summary
 
-This experiment isolates a sharp test:
-
-> Does a sequence of prior weak interactions condition a quantum system in a way that influences a future neutral particle beyond what is predicted by its current quantum state?
+> This work proposes a timing-resolved test of whether prior state-transition history leaves a measurable residual signature after a system enters a stable repeated state. By isolating the post-transition phase and measuring timing at high precision, the experiment probes whether standard state-based descriptions fully capture system behaviour.
 
 
 
-By combining:
 
-Continuous weak interactions
+---
 
-Collective conditioning
+Plain English Summary
 
-Neutral probe measurement
+We take two systems that end up in the same state:
 
-Timing and variance observables
+One got there directly
 
-Any history-dependent effect, if present, is expected to appear as a small non-linear perturbation to standard quantum predictions rather than a large deviation.
-
-We therefore parameterize the signal as:
-
-ΔP = P_A − P_B
-ΔT = T_A − T_B
-ΔVar(T) = Var_A − Var_B
-
-with expected magnitudes on the order of 10⁻³ or smaller.
-
-The experiment is designed to detect such deviations through high-statistics sampling and timing-resolved measurements, where sensitivity scales as 1/√N.
-
-This approach mirrors other precision tests in quantum physics, where physically meaningful effects often appear as small corrections rather than large shifts.
+One got there after lots of flipping
 
 
-this proposal targets a minimally explored regime in quantum foundations.
+Then we ask:
+
+> Do they behave the same once they’re stable?
+
+
+
+Quantum mechanics says yes.
+
+This experiment checks:
+
+> Have we measured timing precisely enough to be sure?
 
 ---
-Simulation and Measurement Sensitivity
-To complement the proposed experiment, we performed a Monte Carlo simulation enforcing:
-
-
-Identical final quantum states across different preparation histories
-
-
-No history-dependent effect under standard quantum mechanics (null condition)
-
-
-As expected, the simulation shows:
-
-No statistically significant difference in probability or timing between histories within noise limits.
-
-This confirms the standard prediction:
-
-If two systems are indistinguishable in state, all measurable outcomes are identical within experimental uncertainty.
-
-
-Sensitivity Analysis
-To explore what level of deviation could be detected, we introduce a small hypothetical residual effect:
-
-
-Timing deviation: ΔT ≈ 0.002 ps
-
-
-Detector jitter: ~18 ps
-
-
-Using standard statistical scaling:
-N≈(jitterΔT)2N \approx \left(\frac{\text{jitter}}{\Delta T}\right)^2N≈(ΔTjitter​)2
-We find:
-
-N ≈ 10⁹ particles are required for a 5σ detection of such a timing effect
-
-Similarly, for probability deviations on the order of 10⁻⁵:
-
-N ≈ 10¹⁰–10¹¹ particles are required
-
-
-Practical Interpretation
-This defines the regime being probed:
-
-Extremely small, non-linear deviations that are not excluded by current null results, but may lie below existing detection thresholds.
-
-In practical terms:
-
-
-Particle counts on the order of 10⁹ are achievable in photon-based experiments
-
-
-However, resolving timing differences at the ~0.002 ps (femtosecond) scale is extremely challenging with current detector technology
 
 
 
-Key Insight
 
-Current experiments that observe no difference are operating within a sensitivity regime where such small deviations would remain indistinguishable from noise.
 
-This work does not claim the existence of a history-dependent effect, but rather:
+Prior Experimental Coverage and Measurement Gap
 
-Provides a quantitative framework linking deviation scale (ε), detector precision, and required sample size (N), enabling targeted experimental tests at the limits of current technology.
+Extensive experimental work in quantum mechanics has already tested:
 
-The simulation quantifies the gap between noise and detectability: any timing-based history-dependent effect must lie approximately four orders of magnitude below single-particle noise, requiring on the order of 10⁹ measurements to become statistically resolvable.
+Large numbers of particles (photons, electrons, atoms)
+
+Repeated state preparation and measurement
+
+High-precision probability and phase observables
+
+
+Typical regimes include:
+
+Particle counts:
+ to  events in interferometry and photon-counting experiments
+
+Repeated state preparation cycles:
+Thousands to millions of sequential operations in quantum optics and quantum information systems
+
+Measurement focus:
+
+Output probabilities
+
+Interference visibility
+
+Phase coherence
+
+
+
+
+---
+
+Critical Observation
+
+Despite this extensive coverage:
+
+> Timing behaviour in a stabilised repeated-state phase following a transition-heavy preparation sequence has not been systematically probed at sub-picosecond precision.
+
+
+
+In particular, prior experiments typically:
+
+Measure during or immediately after state preparation
+
+Focus on probability distributions rather than timing distributions
+
+Do not isolate the post-transition stabilisation phase as a separate observable
+
+
+
+---
+
+Unexplored Regime
+
+This proposal targets the following regime:
+
+High transition depth:
+ to  state transitions prior to stabilisation
+
+Stabilised repeated-state phase:
+Measurement performed only after transitions cease
+
+High-statistics measurement:
+ to  events required for resolving sub-picosecond effects
+
+Timing sensitivity:
+ to  ps (femtosecond scale, achieved via averaging)
+
+
+
+---
+
+Why Prior Null Results Do Not Exclude This Effect
+
+Existing null results operate within regimes where:
+
+Timing precision is limited to picosecond scale or coarser
+
+Observables are dominated by probability and phase measurements
+
+Transition and stabilised phases are not explicitly separated
+
+
+Therefore:
+
+> A residual timing effect that is both extremely small (femtosecond scale) and present only after stabilisation may remain undetected within current experimental approaches.
+
+
+
+
+---
+
+Guidance for Experimental Testing
+
+To meaningfully test this hypothesis, experiments should:
+
+Use sufficiently large datasets (≥ – events)
+
+Apply transition-heavy preparation sequences before stabilisation
+
+Measure only the post-transition repeated-state phase
+
+Use statistical averaging to reach sub-picosecond effective timing resolution
+
+Explicitly separate known system-induced delays from residual timing behaviour
+
+
+
+---
+
+Key Message
+
+> A null result obtained with limited particle counts, low transition depth, or insufficient timing precision does not exclude the presence of a history-dependent timing effect at the scales proposed here.
+
+
+
+
+---
+
+Plain English Summary
+
+Physics has tested large numbers of particles and repeated state changes —
+but not this specific combination:
+
+many state changes
+
+followed by a stable repeated state
+
+measured with extremely precise timing
+
+
+This means:
+
+> A very small timing effect could exist and remain undetected, not because it isn’t real, but because it hasn’t been measured in the right regime yet.
+
+
+---
+
+## **Experimental Regime Comparison**
+PAST EXPERIMENTS (TYPICAL QM TESTS)
+
+Transitions:   Low → Moderate
+Particles:     High
+Timing:        Low precision (ps+)
+Focus:         Probability / Phase
+
+   ┌───────────────┐
+   │  Prepare      │
+   │  State        │
+   └──────┬────────┘
+          │
+          ▼
+   ┌───────────────┐
+   │  Measure      │
+   │  (Immediate)  │
+   └───────────────┘
+
+(No isolated stabilisation phase)
+(No high-precision timing focus)
+
+
+PROPOSED EXPERIMENT (THIS WORK)
+
+Transitions:   High (10^3 → 10^6)
+Particles:     Very High (10^8 → 10^9)
+Timing:        High precision (fs via averaging)
+Focus:         Residual timing after stabilisation
+
+   ┌───────────────┐
+   │  Transition   │
+   │  Phase        │
+   │ (U↔D repeated)│
+   └──────┬────────┘
+          │
+          ▼
+   ┌───────────────┐
+   │  Stabilised   │
+   │  State (U U U)│
+   └──────┬────────┘
+          │
+          ▼
+   ┌───────────────┐
+   │  Timing       │
+   │  Measurement  │
+   │ (High stats)  │
+   └───────────────┘
+
+(Measure ONLY after transitions stop)
+(Look for residual timing effects)
+
+KEY DIFFERENCE
+
+Past:
+  Measure during / immediately after preparation
+
+Proposed:
+  Measure AFTER stabilisation, with deep history and high precision
