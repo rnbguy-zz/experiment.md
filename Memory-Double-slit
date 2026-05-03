@@ -223,9 +223,9 @@ and whether it scales with .
 ---
 
 Sensitivity and Scale
-
-Typical detector jitter: ~10–20 ps
-Target sensitivity: ~0.001–0.01 ps (via averaging)
+​Typical detector jitter: ~10–20 ps (assuming state-of-the-art SNSPDs)
+​Target mean sensitivity: ~0.004 ps
+​Methodology: Achieved via the Standard Error of the Mean (\text{SEM} = \frac{\sigma}{\sqrt{N}}), where a 20 ps jitter over N = 25,000,000 valid probes resolves the target sensitivity.
 
 Required statistics:
 
@@ -320,3 +320,24 @@ This experiment checks whether:
 > After many transitions, a tiny timing effect remains that hasn’t been measured before — and whether it grows with how much history came before.
 
 
+addition notes: Statistical Power, Hardware Constraints, and Systematic Validity
+To push this experiment beyond historical double-slit and weak measurement baselines, the system must clear the 5σ (five-sigma) threshold for statistical significance while strictly guarding against systematic hardware bias.
+
+1. Statistical Baselines and Particle Loads
+To isolate a probability shift of \Delta P \sim 10^{-3} and a timing shift of \Delta T \sim 1 ps from background probabilistic noise, the experiment requires massive statistical power:
+Minimum Probe Count: Reaching a 5σ confidence level requires a minimum of 25,000,000 valid neutral probe measurements per condition (Uniform vs. Mixed).
+Total System Load: Assuming a moderate conditioning sequence of N = 1,000 particles per measurement cycle, the system must continuously process approximately 50 billion total particles to complete the dataset for both conditions.
+
+2. Hardware Requirements
+Executing this volume without succumbing to detector drift requires state-of-the-art quantum optics technology:
+Photon Source: A high-repetition-rate single-photon source operating in the 1 GHz to 2.5 GHz range.
+Timing Resolution: Superconducting Nanowire Single-Photon Detectors (SNSPDs) with a native timing jitter of 20 ps or lower. The massive probe count will utilize the Standard Error of the Mean to mathematically resolve a 1 ps timing shift against this native jitter.
+
+3. The "State Change" Trap (Systematic Validity)
+While the 50-billion particle dataset effectively eliminates random statistical noise, it introduces a severe vulnerability to systematic error: accidental standard state changes.
+In the Mixed History condition, the alternating Z+ and Z− interactions are theoretically assumed to perfectly cancel.
+
+However, if the electro-optic modulators or waveplates applying these interactions are asymmetrical by even a fraction of a percent, the condition will unintentionally leave the system in an altered standard quantum state.
+The detectors would flawlessly measure a timing difference, but it would reflect hardware asymmetry rather than a true non-Markovian history effect.
+To definitively isolate the non-Markovian signal:
+The statistical power must be paired with rigorous logical controls. The measured effect must survive Basis Inversion (Z+ \leftrightarrow Z−) and Path Swaps (physical inversion of interferometer arms). If the measured timing shift accurately tracks the logical history pattern regardless of the physical hardware orientation, it confirms a genuine history-dependent correlation rather than a standard Markovian state change.
