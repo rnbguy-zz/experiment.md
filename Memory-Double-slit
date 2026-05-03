@@ -401,3 +401,5 @@ Current experiments that observe no difference are operating within a sensitivit
 This work does not claim the existence of a history-dependent effect, but rather:
 
 Provides a quantitative framework linking deviation scale (ε), detector precision, and required sample size (N), enabling targeted experimental tests at the limits of current technology.
+
+The simulation quantifies the gap between noise and detectability: any timing-based history-dependent effect must lie approximately four orders of magnitude below single-particle noise, requiring on the order of 10⁹ measurements to become statistically resolvable.
