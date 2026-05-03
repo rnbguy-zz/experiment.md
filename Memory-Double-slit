@@ -1,12 +1,10 @@
 
----
-
 Testing Residual Timing Effects After State Stabilisation
 
 A timing-resolved test of history-dependent behaviour in sequential quantum preparation
 
 Author: Mina Moussa
-Date: 2026-05-03
+Date: 2026-05-03 (Updated)
 
 
 ---
@@ -21,20 +19,20 @@ Standard quantum mechanics predicts:
 
 
 
-This work challenges whether this holds for timing observables at high precision.
+This work tests whether this holds for timing observables at high precision, with an explicit emphasis on scaling the depth of prior transitions.
 
 
 ---
 
 Core Question
 
-> Does a system that has undergone many prior state transitions exhibit identical timing behaviour to a system prepared directly into the same final state?
+> Does a system that has undergone a variable (and potentially very large) number of prior state transitions exhibit identical timing behaviour to a system prepared directly into the same final state?
 
 
 
 Specifically:
 
-> After a period of alternating state changes, does a subsequent repeated same-state phase show any residual timing deviation?
+> After a period of deep alternating state changes, does a subsequent repeated same-state phase show any residual timing deviation, and does this residual scale with transition depth?
 
 
 
@@ -43,19 +41,22 @@ Specifically:
 
 Experimental Concept
 
-Two preparation conditions are constructed:
+Two preparation conditions are constructed, with history depth treated as a variable parameter:
 
 Condition A — Direct Stabilisation
 
 U → U → U → U → U → U → U → U
 
-Condition B — Alternating History + Stabilisation
+Condition B — Deep Alternating History + Stabilisation
 
-U → D → U → D → U → D → U → D → U → U → U → U → U
+(U → D) repeated N times → U → U → U → U → U
 
 Only the final repeated Up phase is measured:
 
 U → U → U → U → U
+
+History Depth Variation:
+Run the experiment for multiple values of N (e.g., , , , ).
 
 
 ---
@@ -64,7 +65,7 @@ Measurement Strategy
 
 Measurements are performed only on the final repeated-state phase, excluding the switching region.
 
-Primary observable:
+Primary observables:
 
 Mean arrival time
 
@@ -73,6 +74,13 @@ Timing variance
 Distribution shape (tails, skewness)
 
 
+Secondary analysis:
+
+Fit residuals to:
+
+
+\text{delay}(k) = A(N) \cdot e^{-k/\tau}
+
 
 ---
 
@@ -80,16 +88,9 @@ Standard Quantum Prediction
 
 If the system is fully described by its current state:
 
-ΔT_final = 0
-ΔVar_final = 0
+\Delta T_{\text{final}} = 0,\quad \Delta \text{Var}_{\text{final}} = 0
 
-within experimental uncertainty.
-
-That is:
-
-> The timing distribution of the final repeated Up phase is independent of prior history.
-
-
+independent of history depth N, within experimental uncertainty.
 
 
 ---
@@ -98,30 +99,56 @@ Alternative Hypothesis
 
 If prior transitions leave residual structure:
 
-> The final repeated-state phase may exhibit a transient timing deviation.
+> The final repeated-state phase may exhibit a transient timing deviation whose initial amplitude  scales with the number of prior alternations.
 
 
 
-This can be modelled as:
+Model:
 
-delay(k) = A × exp(-k / τ)
-
-Where:
-
-k = index within repeated-state phase
-
-A = initial residual timing offset
-
-τ = relaxation timescale
-
+\text{delay}(k) = A(N) \cdot e^{-k/\tau}
 
 Predicted effects:
 
-Initial delay in first few repeated-state events
+Larger initial delay after deeper history
 
 Gradual convergence to baseline timing
 
-Possible increased variance or asymmetric distribution
+Possible increased variance or asymmetry early in the stable phase
+
+
+
+---
+
+Systematic Scaling Constraint (Critical Test Condition)
+
+A key requirement is to distinguish any history-dependent timing effect from ordinary system-induced delays.
+
+Known physical mechanisms may introduce timing changes that scale with:
+
+Number of operations
+
+Energy input / switching activity
+
+Thermal load
+
+Path-length variation
+
+Detector response and calibration drift
+
+
+Therefore, a valid history-dependent signal must satisfy:
+
+>  scales with transition count  in a manner that cannot be explained by known system-level scaling effects.
+
+
+
+To ensure this:
+
+System-induced contributions must be independently measured or bounded
+
+Control sequences must match total operation count, energy input, and runtime
+
+Residual scaling must persist after subtraction of all known effects
 
 
 
@@ -129,29 +156,29 @@ Possible increased variance or asymmetric distribution
 
 Key Principle
 
-The experiment explicitly separates:
+The experiment separates:
 
 Known system-induced delay (during switching)
 
 Residual delay after switching has stopped
 
 
-Only the latter is tested.
+History depth is varied to probe accumulation effects, while measurement is restricted to the stabilised phase.
 
 
 ---
 
 Critical Controls
 
-To isolate the effect:
-
 System Controls
 
-Stable interferometer path length
+Stable interferometer path length (active feedback)
 
 Detector timing calibration
 
 Laser pulse stability
+
+Monitoring of thermal/electrical load during deep switching
 
 
 Logical Controls
@@ -162,10 +189,19 @@ Reverse sequence ordering
 
 Randomised sequences
 
+Interleaved A/B runs to cancel slow drift
+
+Matched average power and duty cycle
+
 
 Reset Control
 
 Full system reset between runs
+
+
+Depth-Specific Checks
+
+Verify deeper histories do not introduce new classical systematics
 
 
 
@@ -173,58 +209,38 @@ Full system reset between runs
 
 Residual Extraction
 
-Measured timing:
+\Delta T_{\text{measured}} = \Delta T_{\text{system}} + \Delta T_{\text{history}}(N) + \text{noise}
 
-ΔT_measured = ΔT_system + ΔT_history + noise
-
-Subtract known system contribution:
-
-ΔT_residual = ΔT_measured - ΔT_system
+\Delta T_{\text{residual}}(N) = \Delta T_{\text{measured}} - \Delta T_{\text{system}}
 
 Test whether:
 
-ΔT_residual ≠ 0
+\Delta T_{\text{residual}}(N) \neq 0
 
-and follows decay structure.
+and whether it scales with .
 
 
 ---
 
 Sensitivity and Scale
 
-Given:
+Typical detector jitter: ~10–20 ps
+Target sensitivity: ~0.001–0.01 ps (via averaging)
 
-Detector jitter ≈ 10–20 ps
+Required statistics:
 
-Target timing sensitivity ≈ 0.001–0.01 ps
-
-
-Detection requires:
-
-N ≈ (jitter / ΔT)^2
+N_{\text{events}} \approx \left(\frac{\text{jitter}}{\Delta T}\right)^2
 
 Example:
 
-ΔT ≈ 0.002 ps
+ ps
 
-jitter ≈ 18 ps
-
-
-N ≈ 10^9 measurements
+jitter ~18 ps
 
 
----
+N \sim 10^9
 
-Feasibility Insight
-
-This implies:
-
-The effect, if present, is far below single-event resolution
-
-Detection relies on statistical averaging over large datasets
-
-Timing must be measured at sub-picosecond effective precision
-
+Deep histories may allow amplification of detectable signals, but must be validated against systematic scaling constraints.
 
 
 ---
@@ -233,286 +249,74 @@ Interpretation
 
 Null Result
 
-No detectable residual timing:
+No residual detected
 
-> Supports standard quantum mechanics
-Confirms no history-dependent timing effect
+No scaling with 
 
 
+→ Supports standard quantum mechanics
 
 
 ---
 
 Positive Result
 
-Residual timing detected:
+Residual timing detected that:
 
 Appears only after alternating history
+
+Scales with history depth 
 
 Persists into repeated-state phase
 
 Decays over time
 
 
-Implication:
-
-> Indicates a history-dependent contribution not captured by standard state description
-
-
+→ Indicates a history-dependent contribution beyond standard state description
 
 
 ---
 
 Significance
 
-This experiment targets a minimally explored regime:
+This experiment probes a minimally explored regime:
 
 Timing as a primary observable
 
 Post-stabilisation behaviour
 
-High-statistics detection of small effects
+Variable transition depth ()
+
+High-statistics detection
 
 
-It does not assume new physics, but tests whether:
-
-> Extremely small history-dependent timing effects exist below current detection limits.
-
-
+It tests whether extremely small history-dependent timing effects exist below current detection limits.
 
 
 ---
 
 Summary
 
-> This work proposes a timing-resolved test of whether prior state-transition history leaves a measurable residual signature after a system enters a stable repeated state. By isolating the post-transition phase and measuring timing at high precision, the experiment probes whether standard state-based descriptions fully capture system behaviour.
-
-
+This work proposes a timing-resolved test of whether prior state-transition history — varied in depth — leaves a measurable residual signature after a system enters a stable repeated state. By isolating the stabilised phase and enforcing strict control of system-induced scaling, the experiment probes whether standard state-based descriptions fully capture system behaviour.
 
 
 ---
 
 Plain English Summary
 
-We take two systems that end up in the same state:
+We compare two systems that end up in the same stable state:
 
 One got there directly
 
 One got there after lots of flipping
 
 
-Then we ask:
+Then we measure only after they stabilise.
 
-> Do they behave the same once they’re stable?
+Quantum mechanics says they should behave the same.
 
+This experiment checks whether:
 
+> After many transitions, a tiny timing effect remains that hasn’t been measured before — and whether it grows with how much history came before.
 
-Quantum mechanics says yes.
 
-This experiment checks:
-
-> Have we measured timing precisely enough to be sure?
-
----
-
-
-
-
-
-Prior Experimental Coverage and Measurement Gap
-
-Extensive experimental work in quantum mechanics has already tested:
-
-Large numbers of particles (photons, electrons, atoms)
-
-Repeated state preparation and measurement
-
-High-precision probability and phase observables
-
-
-Typical regimes include:
-
-Particle counts:
- to  events in interferometry and photon-counting experiments
-
-Repeated state preparation cycles:
-Thousands to millions of sequential operations in quantum optics and quantum information systems
-
-Measurement focus:
-
-Output probabilities
-
-Interference visibility
-
-Phase coherence
-
-
-
-
----
-
-Critical Observation
-
-Despite this extensive coverage:
-
-> Timing behaviour in a stabilised repeated-state phase following a transition-heavy preparation sequence has not been systematically probed at sub-picosecond precision.
-
-
-
-In particular, prior experiments typically:
-
-Measure during or immediately after state preparation
-
-Focus on probability distributions rather than timing distributions
-
-Do not isolate the post-transition stabilisation phase as a separate observable
-
-
-
----
-
-Unexplored Regime
-
-This proposal targets the following regime:
-
-High transition depth:
- to  state transitions prior to stabilisation
-
-Stabilised repeated-state phase:
-Measurement performed only after transitions cease
-
-High-statistics measurement:
- to  events required for resolving sub-picosecond effects
-
-Timing sensitivity:
- to  ps (femtosecond scale, achieved via averaging)
-
-
-
----
-
-Why Prior Null Results Do Not Exclude This Effect
-
-Existing null results operate within regimes where:
-
-Timing precision is limited to picosecond scale or coarser
-
-Observables are dominated by probability and phase measurements
-
-Transition and stabilised phases are not explicitly separated
-
-
-Therefore:
-
-> A residual timing effect that is both extremely small (femtosecond scale) and present only after stabilisation may remain undetected within current experimental approaches.
-
-
-
-
----
-
-Guidance for Experimental Testing
-
-To meaningfully test this hypothesis, experiments should:
-
-Use sufficiently large datasets (≥ – events)
-
-Apply transition-heavy preparation sequences before stabilisation
-
-Measure only the post-transition repeated-state phase
-
-Use statistical averaging to reach sub-picosecond effective timing resolution
-
-Explicitly separate known system-induced delays from residual timing behaviour
-
-
-
----
-
-Key Message
-
-> A null result obtained with limited particle counts, low transition depth, or insufficient timing precision does not exclude the presence of a history-dependent timing effect at the scales proposed here.
-
-
-
-
----
-
-Plain English Summary
-
-Physics has tested large numbers of particles and repeated state changes —
-but not this specific combination:
-
-many state changes
-
-followed by a stable repeated state
-
-measured with extremely precise timing
-
-
-This means:
-
-> A very small timing effect could exist and remain undetected, not because it isn’t real, but because it hasn’t been measured in the right regime yet.
-
-
----
-
-## **Experimental Regime Comparison**
-PAST EXPERIMENTS (TYPICAL QM TESTS)
-
-Transitions:   Low → Moderate
-Particles:     High
-Timing:        Low precision (ps+)
-Focus:         Probability / Phase
-
-   ┌───────────────┐
-   │  Prepare      │
-   │  State        │
-   └──────┬────────┘
-          │
-          ▼
-   ┌───────────────┐
-   │  Measure      │
-   │  (Immediate)  │
-   └───────────────┘
-
-(No isolated stabilisation phase)
-(No high-precision timing focus)
-
-
-PROPOSED EXPERIMENT (THIS WORK)
-
-Transitions:   High (10^3 → 10^6)
-Particles:     Very High (10^8 → 10^9)
-Timing:        High precision (fs via averaging)
-Focus:         Residual timing after stabilisation
-
-   ┌───────────────┐
-   │  Transition   │
-   │  Phase        │
-   │ (U↔D repeated)│
-   └──────┬────────┘
-          │
-          ▼
-   ┌───────────────┐
-   │  Stabilised   │
-   │  State (U U U)│
-   └──────┬────────┘
-          │
-          ▼
-   ┌───────────────┐
-   │  Timing       │
-   │  Measurement  │
-   │ (High stats)  │
-   └───────────────┘
-
-(Measure ONLY after transitions stop)
-(Look for residual timing effects)
-
-KEY DIFFERENCE
-
-Past:
-  Measure during / immediately after preparation
-
-Proposed:
-  Measure AFTER stabilisation, with deep history and high precision
