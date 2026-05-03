@@ -338,5 +338,66 @@ This approach mirrors other precision tests in quantum physics, where physically
 
 this proposal targets a minimally explored regime in quantum foundations.
 
-
 ---
+Simulation and Measurement Sensitivity
+To complement the proposed experiment, we performed a Monte Carlo simulation enforcing:
+
+
+Identical final quantum states across different preparation histories
+
+
+No history-dependent effect under standard quantum mechanics (null condition)
+
+
+As expected, the simulation shows:
+
+No statistically significant difference in probability or timing between histories within noise limits.
+
+This confirms the standard prediction:
+
+If two systems are indistinguishable in state, all measurable outcomes are identical within experimental uncertainty.
+
+
+Sensitivity Analysis
+To explore what level of deviation could be detected, we introduce a small hypothetical residual effect:
+
+
+Timing deviation: ΔT ≈ 0.002 ps
+
+
+Detector jitter: ~18 ps
+
+
+Using standard statistical scaling:
+N≈(jitterΔT)2N \approx \left(\frac{\text{jitter}}{\Delta T}\right)^2N≈(ΔTjitter​)2
+We find:
+
+N ≈ 10⁹ particles are required for a 5σ detection of such a timing effect
+
+Similarly, for probability deviations on the order of 10⁻⁵:
+
+N ≈ 10¹⁰–10¹¹ particles are required
+
+
+Practical Interpretation
+This defines the regime being probed:
+
+Extremely small, non-linear deviations that are not excluded by current null results, but may lie below existing detection thresholds.
+
+In practical terms:
+
+
+Particle counts on the order of 10⁹ are achievable in photon-based experiments
+
+
+However, resolving timing differences at the ~0.002 ps (femtosecond) scale is extremely challenging with current detector technology
+
+
+
+Key Insight
+
+Current experiments that observe no difference are operating within a sensitivity regime where such small deviations would remain indistinguishable from noise.
+
+This work does not claim the existence of a history-dependent effect, but rather:
+
+Provides a quantitative framework linking deviation scale (ε), detector precision, and required sample size (N), enabling targeted experimental tests at the limits of current technology.
