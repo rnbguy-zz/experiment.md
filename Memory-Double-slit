@@ -19,14 +19,12 @@ Standard quantum mechanics assumes:
 
 This implies **Markovian behaviour**:
 
-```text
+
 Same state → same outcomes (probability, phase, timing)
 
 This proposal tests a sharper question:
 
 > Can two systems that are experimentally indistinguishable in state still exhibit different behaviour due to prior interaction history?
-
-
 
 The focus is on timing and variance, which are underutilized observables in foundational tests.
 
@@ -35,13 +33,13 @@ The focus is on timing and variance, which are underutilized observables in foun
 
 Core Hypothesis
 
-Null Hypothesis (Standard QM)
+- Null Hypothesis (Standard QM)
 
-All measurable outcomes depend only on the current quantum state
+- All measurable outcomes depend only on the current quantum state
 
-Sequential interactions matter only insofar as they modify that state
+- Sequential interactions matter only insofar as they modify that state
 
-No additional timing delay, jitter, or variance beyond known physical effects
+- No additional timing delay, jitter, or variance beyond known physical effects
 
 
 
@@ -49,24 +47,21 @@ No additional timing delay, jitter, or variance beyond known physical effects
 
 Alternative Hypothesis (History-Dependent / Non-Markovian Effect)
 
-Prior interaction sequences leave residual correlations or structure
+- Prior interaction sequences leave residual correlations or structure
 
-These may not be fully captured by the reduced quantum state
+- These may not be fully captured by the reduced quantum state
 
 Observable consequences may include:
 
-Small probability shifts
+- Small probability shifts
 
-Phase shifts
+- Phase shifts
 
-Arrival-time delays
+- Arrival-time delays
 
-Increased timing variance
+- Increased timing variance
 
-Distribution broadening or tail effects
-
-
-
+- Distribution broadening or tail effects
 
 ---
 
@@ -76,10 +71,7 @@ The experiment combines two key elements:
 
 1. Continuous weak interaction (no full reset)
 
-
 2. Collective conditioning followed by a neutral probe particle
-
-
 
 
 ---
@@ -104,17 +96,17 @@ A sequence of particles is sent through the system to establish a history-depend
 
 Condition A — Uniform history
 
-N particles: weak Z+ interactions
+- N particles: weak Z+ interactions
 
 Condition B — Mixed history
 
-N particles: alternating weak Z+, Z− interactions
+- N particles: alternating weak Z+, Z− interactions
 
 Where:
 
-Interactions are weak (partial which-path information)
+- Interactions are weak (partial which-path information)
 
-The system evolves continuously without full collapse/reset
+- The system evolves continuously without full collapse/reset
 
 
 
@@ -137,24 +129,24 @@ All measurements are performed on the probe particle only.
 
 Primary observables:
 
-Output probability distribution
+- Output probability distribution at ~0.0001 variation
 
-Interference visibility
+- Interference visibility
 
-Interference phase
+- Interference phase
 
 
 Timing observables (central to this proposal):
 
-Mean arrival time
+- Mean arrival time
 
-Timing variance
+- Timing variance
 
-Distribution width
+- Distribution width
 
-Late-arrival tail probability
+- Late-arrival tail probability
 
-Outcome-conditioned timing
+- Outcome-conditioned timing
 
 
 
