@@ -321,7 +321,7 @@ Neutral probe measurement
 
 Timing and variance observables
 
-Any history-dependent effect, if present, is expected to appear as a small perturbation to standard quantum predictions rather than a large deviation.
+Any history-dependent effect, if present, is expected to appear as a small non-linear perturbation to standard quantum predictions rather than a large deviation.
 
 We therefore parameterize the signal as:
 
