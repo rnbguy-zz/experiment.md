@@ -248,3 +248,43 @@ The statistical power must be paired with rigorous logical controls. The measure
 Note on Relation to Existing Work
 Electro-optic modulation, rapid state switching, and precision timing measurements (including via second-order coincidence functions) are well established in both classical and quantum photonics. Prior work has demonstrated high-speed control of photon states and delays, with MHz–GHz modulation and nanosecond-scale (or better) tunable arrival-time shifts.
 However, these experiments are primarily designed to achieve active control or optimization during modulation. They implicitly rely on the standard quantum mechanical assumption that, once a system is prepared into a given state, all future observables depend only on that state — independent of the specific sequence or depth of prior transitions. Consequently, any observed timing variations are treated as classical engineering effects (e.g., dispersion, modulation bandwidth limits, detector response, thermal load, or drive-induced jitter) and are minimized, calibrated, or subtracted accordingly.
+
+---
+Post-Stabilisation Timing Signature (Discriminating Criterion)
+
+The primary observable is the timing behaviour after the system has entered a repeated, stabilised state, not during the switching phase.
+We define the following discriminating condition:
+
+Null (standard quantum prediction):
+Once the system is prepared into a repeated state, all timing observables are stationary and independent of prior history. Any residual variation must be attributable to known system effects (e.g. detector jitter, thermal drift, modulation asymmetry).
+> The stabilised phase exhibits no structured timing dependence beyond statistical noise.
+
+Alternative (history-dependent hypothesis):
+If prior transitions leave residual structure not captured by the final state description, then:
+> The stabilised phase may exhibit a transient timing deviation whose amplitude depends on prior history depth, and which decays toward baseline over repeated measurements.
+
+This defines a concrete observable:
+> A history-conditioned, decaying timing curve in the stabilised phase:
+Present only after alternating preparation sequences
+Absent in direct-preparation controls
+Scaling with transition depth 
+Persisting after all switching has ceased
+Converging toward baseline with repeated measurements
+
+---
+Separation from System-Induced Timing Effects
+
+To distinguish this effect from conventional timing noise or hardware-induced artefacts, any valid signal must satisfy:
+
+1. Control Equivalence
+Identical total switching count, energy input, and runtime must not reproduce the effect.
+2. History Dependence
+The signal must scale with sequence structure, not merely operation count or power load.
+3. Post-Stabilisation Persistence
+The effect must appear after switching has ceased, where known system effects are stationary.
+4. Reproducible Decay Structure
+The observed timing deviation must follow a consistent decay profile toward baseline; random jitter does not produce repeatable structured decay.
+5. Sequence Reversibility Checks
+The effect must track logical sequence variations (e.g. inversion or reordering) rather than fixed hardware configuration.
+
+Only signals satisfying all of the above conditions can be considered candidates for a genuine history-dependent timing contribution.
