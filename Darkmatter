@@ -1,264 +1,171 @@
-Adaptive Protein-Like Dark Matter Framework
+**Adaptive Composite Cold Dark Matter (ACCDM)**  
+**An Extension of ΛCDM with Emergent Protein-Like Self-Organisation at Galactic Scales**
 
-Higgs-Like Self-Organising Hidden Matter with Reinforced Galactic Pathways
-
-Overview
-
-This framework proposes that dark matter is not purely passive collisionless matter, but instead emerges from a hidden Higgs-like field whose particle excitations behave as self-organising “protein-like” structures on galactic scales.
-
-The theory preserves:
-
-- unseen gravitational mass,
-- compatibility with large-scale cosmology,
-- and weak interaction with ordinary matter,
-
-while introducing:
-
-- adaptive pathway formation,
-- reinforcement under repeated galactic flow,
-- and repair-like energy minimisation dynamics.
-
-The goal is not to replace standard cosmology immediately, but to provide a mathematically testable extension capable of generating unique observable predictions.
+**Author:** Mina Moussa  
+**Date:** May 2026  
 
 ---
 
-1. Hidden Higgs-Like Field
+### Plain English Summary
 
-Define a hidden-sector scalar field:
+Dark matter is real — we see its gravitational effects everywhere. Standard Cold Dark Matter (CDM) works extremely well for the early universe, galaxy clusters, and the large-scale cosmic web. However, it struggles to explain the detailed behavior inside individual galaxies (flat rotation curves, cores instead of cusps, and the diversity of galaxy shapes).
 
-[
-\Psi_p
-]
+**ACCDM** upgrades CDM instead of replacing it.  
 
-with spontaneous symmetry breaking similar to the Higgs mechanism.
+The idea is that dark matter particles are not simple, featureless points. They are **composite structures** — tiny “dark proteins” — that can connect, self-organise, and adapt. In the early universe they behave exactly like ordinary cold dark matter. But once galaxies form and mature, these particles create **reinforced, adaptive invisible pathways** through space.
 
-Field decomposition:
+Just like real proteins in your body:
+- They self-assemble into useful structures
+- They strengthen with repeated use (reinforcement)
+- They repair if damaged
+- They align along stress or field lines
 
-[
+In galaxies, dark matter does something similar: it forms stable “highways” along the directions where stars and gas flow repeatedly. These pathways provide extra support that helps explain observed rotation curves. The pathways also tend to align with galactic magnetic fields.
+
+This adaptive behavior only becomes important at galactic scales and late times, so it doesn’t disturb the successes of standard cosmology.
+
+---
+
+### Full Theoretical Framework
+
+#### 1. Hidden Composite Sector + Higgs Portal
+
+Dark matter consists of composite particles formed in a hidden sector. These composites couple weakly to the Standard Model **Higgs field** (Higgs portal), which helps set their mass. The internal structure of these composites allows them to have different “shapes” or binding configurations — giving rise to the protein-like properties at the microscopic level.
+
+#### 2. Hidden Higgs-Like Field
+
+We define a hidden-sector scalar field:
+
+$$
 \Psi_p = v_p + \chi_p
-]
+$$
 
-where:
+with the potential
 
-- v_p is the vacuum expectation value,
-- \chi_p represents particle excitations of the field.
+$$
+V(\Psi_p) = -\frac{\mu_p^2}{2} \Psi_p^2 + \frac{\lambda_p}{4} \Psi_p^4
+$$
 
----
+where $v_p$ is the vacuum expectation value.
 
-2. Higgs-Like Potential
+#### 3. Energy Functional (Galactic Scales)
 
-[
-V(\Psi_p)
+The adaptive dynamics are governed by the energy functional:
 
--\frac{\mu_p^2}{2}\Psi_p^2
-+
-\frac{\lambda_p}{4}\Psi_p^4
-]
+$$
+E = \int \left[
+\frac{1}{2} |\nabla \Psi_p|^2 +
+V(\Psi_p) -
+g \rho_b \Psi_p^2 -
+h (\mathbf{J} \cdot \mathbf{n})^2 -
+\epsilon (\mathbf{B} \cdot \mathbf{n})^2
+\right] d^3x
+$$
 
-The vacuum state satisfies:
+**Terms explained:**
+- $g \rho_b \Psi_p^2$ — coupling to baryonic (ordinary) matter
+- $h (\mathbf{J} \cdot \mathbf{n})^2$ — reinforcement by galactic flow current $\mathbf{J}$
+- $\epsilon (\mathbf{B} \cdot \mathbf{n})^2$ — alignment with galactic magnetic field $\mathbf{B}$
+- $\mathbf{n}$ — local orientation of dark matter pathways
 
-[
-\langle \Psi_p \rangle = v_p
-]
+#### 4. Evolution and Repair Dynamics
 
-Particle mass:
+Globally, dark matter follows the standard CDM continuity equation:
 
-[
-m_\chi^2 = 2\lambda_p v_p^2
-]
+$$
+\dot{\rho}_{\text{CDM}} + 3H \rho_{\text{CDM}} = 0
+$$
 
----
+At galactic scales, an adaptive term activates:
 
-3. Protein-Like Self-Organisation
+$$
+\frac{\partial \rho_p}{\partial t} = \frac{\partial \rho_{\text{CDM}}}{\partial t} - \Gamma \frac{\delta E}{\delta \rho_p}
+$$
 
-Unlike standard cold dark matter, the field supports large-scale self-assembly and filament reinforcement.
+This dissipative dynamics naturally produces:
+- **Self-assembly** into filamentary structures
+- **Reinforcement** of frequently used pathways
+- **Repair** of disrupted regions through energy minimisation
 
-Energy functional:
+#### 5. Galactic Rotation Dynamics
 
-[
-E =
-\int
-\left[
-\frac{1}{2}|\nabla \Psi_p|^2
-+
-V(\Psi_p)
+The observed rotation curve receives an extra contribution from the adaptive pathways:
 
-g\rho_b\Psi_p^2
+$$
+v^2(r) = \frac{G M_b(r)}{r} + r \, a_p(r)
+$$
 
-h(\mathbf{J}\cdot \mathbf{n})^2
-\right]d^3x
-]
-
-where:
-
-- \rho_b = baryonic matter density,
-- \mathbf{J} = galactic flow current,
-- \mathbf{n} = pathway orientation field,
-- g = matter coupling,
-- h = flow-alignment coupling.
+where $a_p(r)$ is the acceleration due to gradients in the reinforced dark matter density and alignment terms.
 
 ---
 
-4. Emergent Repair Dynamics
+### Key Testable Prediction
 
-The adaptive “repair” behaviour is not inserted manually, but emerges through energy minimisation.
+**Unexplained features in galactic rotation curves should correlate with the strength, order, and geometry of galactic flows and magnetic fields.**
 
-Field evolution:
-
-[
-\frac{\partial \rho_p}{\partial t}
-
--\Gamma \frac{\delta E}{\delta \rho_p}
-]
-
-Meaning:
-
-- aligned pathway states lower energy,
-- disrupted structures naturally reform,
-- repeated galactic motion reinforces stable pathways.
-
-This behaviour is mathematically analogous to biological reinforcement and repair processes in protein/muscle systems.
+Galaxies with well-ordered magnetic fields and coherent stellar/gas flows are predicted to show systematically different rotation residuals than galaxies with chaotic or weak fields. This prediction distinguishes ACCDM from standard CDM and basic SIDM.
 
 ---
 
-5. Galactic Rotation Dynamics
+### Compatibility with Observations
 
-Total rotational support:
+**Preserved successes of ΛCDM:**
+- Cosmic Microwave Background
+- Large-scale structure and cosmic web
+- Gravitational lensing
+- Cluster dynamics (Bullet Cluster)
+- Big Bang nucleosynthesis
 
-[
-v^2(r)
+**Targeted improvements at galactic scales:**
+- Core-cusp problem → natural core formation via adaptive pathways
+- Rotation curve diversity
+- Baryon-dark matter correlations
+- Too-big-to-fail problem
 
-\frac{GM_b(r)}{r}
-+
-r a_p(r)
-]
-
-where the adaptive pathway acceleration is:
-
-[
-a_p(r)
-
--\frac{1}{\rho_b}
-\frac{d}{dr}
-\left[
-g\rho_b\rho_p
-+
-hJ^2\cos^2\theta
-\right]
-]
+The self-interactions are **velocity-dependent**: strong at low galactic speeds (allowing structure and reinforcement) but weak at high cluster speeds (preserving collisionless behavior on large scales).
 
 ---
 
-6. Unique Observable Prediction
+### Parameters
 
-Unlike standard \LambdaCDM, this framework predicts:
-
-[
-v_{\text{extra}}^2(r)
-\propto
-r\frac{d}{dr}
-\left[J^2\cos^2\theta\right]
-]
-
-Meaning:
-
-«Unexplained galactic rotation should correlate with ordered galactic flow and magnetic/pathway alignment geometry.»
-
-This prediction is testable using:
-
-- galaxy rotation curves,
-- magnetic field maps,
-- gravitational lensing,
-- and cosmic filament orientation surveys.
+The model is relatively economical:
+- $m_\chi$ — mass of composite particles
+- $\lambda_p$ — self-interaction / potential strength
+- $g, h, \epsilon$ — coupling constants (baryon, flow, magnetic)
+- $\Gamma$ — relaxation rate for adaptive dynamics
 
 ---
 
-7. Early-Universe Compatibility
+### Current Status and Next Steps
 
-To preserve nucleosynthesis and CMB consistency:
+This is a speculative but mathematically consistent theoretical framework. It builds directly on the original “Adaptive Protein-Like Dark Matter” idea while framing it as a natural extension of Cold Dark Matter.
 
-- the hidden field behaves approximately as cold dark matter in the early universe,
-- adaptive reinforcement activates primarily during mature galaxy formation,
-- interaction strength remains extremely weak outside large-scale structures.
-
----
-
-8. Core Parameters
-
-The framework minimises tunable freedom using only:
-
-[
-{m_\chi,\lambda_p,g,h}
-]
-
-representing:
-
-- particle mass,
-- self-interaction strength,
-- baryonic coupling,
-- and pathway alignment coupling.
+**Immediate next steps:**
+1. Implement the energy functional and adaptive term in galaxy simulation codes (GADGET, AREPO, GIZMO, etc.)
+2. Fit the model to observed rotation curves and magnetic field maps
+3. Study relic density and direct/indirect detection constraints
+4. Compare predictions against large galaxy surveys (PHANGS, SKA, Euclid, Rubin Observatory)
 
 ---
 
-9. Interpretation
+### Interpretation
 
-This theory does not treat dark matter as biological matter literally.
+The term **“protein-like”** is purely mathematical and refers to emergent properties:
+- Self-assembly
+- Reinforcement under repeated stress/flow
+- Repair via energy minimisation
+- Filament organisation
+- Adaptive alignment
 
-“Protein-like” refers mathematically to:
-
-- self-assembly,
-- reinforcement,
-- repair dynamics,
-- filament organisation,
-- and adaptive pathway formation.
-
-The proposal is therefore best interpreted as:
-
-«A hidden Higgs-like dark sector capable of emergent self-organising structure formation on galactic scales.»
+It does **not** imply literal biology in dark matter — only that similar organisational principles can emerge from hidden-sector composite physics.
 
 ---
 
-10. Current Status
+**This framework keeps the best of Cold Dark Matter while adding the missing adaptive behaviour needed at galactic scales.**
 
-This is currently:
+Feedback, criticism, and especially simulation collaborators are warmly welcome.
 
-- a speculative theoretical framework,
-- not experimentally verified,
-- and not yet simulated against full cosmological datasets.
+---
 
-The next major milestone would be:
-
-1. numerical galaxy simulations,
-2. fitting observed rotation curves,
-3. testing pathway/magnetic alignment correlations,
-4. and comparison against \LambdaCDM predictions.
-
---
-Plain English Explanation
-
-This theory suggests that dark matter may not just be invisible “stuff” sitting around galaxies passively.
-
-Instead, dark matter could come from a hidden Higgs-like field that naturally forms structured pathways through space, somewhat similar mathematically to how proteins and muscles organise, strengthen, and repair themselves inside the body.
-
-The idea is not that dark matter is literally biological protein.
-Rather, it behaves in a “protein-like” way by:
-
-- self-organising into stable structures,
-- reinforcing frequently used pathways,
-- repairing disrupted regions,
-- and adapting over time to repeated galactic motion.
-
-In this model:
-
-- galaxies move partly because of gravity,
-- and partly because stars travel within these reinforced invisible pathways.
-
-The theory still keeps dark matter as real unseen mass, so it can still explain gravitational lensing and other observations that require additional gravity.
-
-A key feature of the framework is that the adaptive behaviour mainly becomes important after galaxies form. In the early universe, the hidden field behaves much more like ordinary cold dark matter, helping preserve compatibility with existing cosmology observations.
-
-The theory also makes a testable prediction:
-
-«galaxies with stronger organised magnetic or pathway structure should show different unexplained rotational behaviour compared with galaxies where that structure is weaker or disrupted.»
-
-If future observations or simulations show this correlation exists, it could support the idea that dark matter behaves as a self-organising hidden structure rather than a purely passive invisible halo.
+**Mina Moussa**  
+May 2026
