@@ -7,7 +7,11 @@ Author: Mina
 
 ### Abstract
 
-We present a purely predictive, **parameter-free** model in which dark-matter halos acquire additional rotational support through the cumulative history of baryonic structure. Using only the observed baryonic rotation curve of each galaxy, we compute a "history field" that encodes persistent structural imprints left by shear and curvature. When this field is added (with a single fixed, galaxy-independent scaling) to a standard Burkert halo, the model improves the fit (**ΔBIC > 0**) for **40 out of 84 galaxies (47.6 %)** in the SPARC sample. The median ΔBIC is **−0.058**, consistent with the expected statistical penalty for an extra term. The largest improvements occur on the well-known rotation-curve outliers (NGC 2403, UGC 11914, NGC 6015).
+We present a deterministic history-accumulation model for galaxy rotation curves based on the cumulative structural evolution of baryonic matter. Using only the observed baryonic rotation profile of each galaxy, we construct a history field that encodes accumulated shear and curvature structure across galactic radii. This field is then added as an additional rotational-support component alongside a standard Burkert dark-matter halo, without introducing any galaxy-specific fitting parameters beyond the baseline halo fit itself.
+
+The model was tested on 84 galaxies from the SPARC rotation-curve sample using Bayesian Information Criterion (BIC) comparison against the baseline Burkert halo model. The history-accumulation field improves the fit (ΔBIC > 0) in 40 of 84 galaxies (47.6%), with a median ΔBIC of −0.058 across the full sample. While the overall population-level effect is approximately neutral, several galaxies exhibit substantial improvements, including NGC 2403 (ΔBIC ≈ 693), UGC 11914 (ΔBIC ≈ 500), and NGC 6015 (ΔBIC ≈ 298).
+
+These results suggest that cumulative baryonic structural history may encode a measurable phenomenological contribution to rotational support in at least a subset of galaxies. Although the model does not universally outperform the baseline halo fit, the emergence of strong improvements in specific systems motivates further investigation into whether history-dependent structural effects play a role in galactic dynamics.
 
 ### 1. The Pure History Accumulation Model
 
