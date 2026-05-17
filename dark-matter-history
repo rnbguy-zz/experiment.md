@@ -7,11 +7,11 @@ Author: Mina
 
 ### Abstract
 
-We present a deterministic history-accumulation model for galaxy rotation curves based on the cumulative structural evolution of baryonic matter. Using only the observed baryonic rotation profile of each galaxy, we construct a history field that encodes accumulated shear and curvature structure across galactic radii. This field is then added as an additional rotational-support component alongside a standard Burkert dark-matter halo, without introducing any galaxy-specific fitting parameters beyond the baseline halo fit itself.
+We present a deterministic history-accumulation model for galaxy rotation curves based on the cumulative structural evolution of baryonic matter. Using only the observed baryonic rotation profile of each galaxy, we construct a history field that encodes accumulated shear and curvature structure across galactic radii. This field is then added as an additional rotational-support component alongside a standard Burkert dark-matter halo, without introducing galaxy-specific fitting parameters beyond the baseline halo fit itself.
 
-The model was tested on 84 galaxies from the SPARC rotation-curve sample using Bayesian Information Criterion (BIC) comparison against the baseline Burkert halo model. The history-accumulation field improves the fit (ΔBIC > 0) in 40 of 84 galaxies (47.6%), with a median ΔBIC of −0.058 across the full sample. While the overall population-level effect is approximately neutral, several galaxies exhibit substantial improvements, including NGC 2403 (ΔBIC ≈ 693), UGC 11914 (ΔBIC ≈ 500), and NGC 6015 (ΔBIC ≈ 298).
+The model was tested on 165 galaxies from the SPARC rotation-curve sample using Bayesian Information Criterion (BIC) comparison against the baseline Burkert halo model. The history-accumulation field improves the fit (ΔBIC > 0) in 74 of 165 galaxies (44.8%), with a median ΔBIC of −0.019 across the full sample. While the overall population-level effect remains approximately neutral, several galaxies exhibit substantial improvements, including NGC 2403 (ΔBIC ≈ 693), UGC 11914 (ΔBIC ≈ 500), and NGC 6015 (ΔBIC ≈ 298).
 
-These results suggest that cumulative baryonic structural history may encode a measurable phenomenological contribution to rotational support in at least a subset of galaxies. Although the model does not universally outperform the baseline halo fit, the emergence of strong improvements in specific systems motivates further investigation into whether history-dependent structural effects play a role in galactic dynamics.
+Importantly, the strongest-performing galaxies remained stable as the tested sample size increased, suggesting that the effect is not solely driven by small-sample statistical fluctuations. Although the model does not universally outperform the baseline halo fit, the emergence of strong improvements in specific systems motivates further investigation into whether cumulative baryonic structural history may contribute phenomenologically to galactic rotational support.
 
 ### 1. The Pure History Accumulation Model
 
@@ -39,41 +39,41 @@ The history field itself is a pure prediction — no tunable amplitude or shape 
 
 ### 2. Data and Method
 
-- **Dataset**: SPARC rotation-curve catalogue (Lelli et al. 2016)
-- **Sample**: 84 galaxies with ≥15 radial points and positive velocity errors
-- **Comparison**:  
-  - Baseline = baryons + Burkert halo (2 parameters)  
-  - History model = baseline + history field (still 2 parameters)
-- **Metric**: Bayesian Information Criterion (BIC)
+* Dataset: SPARC rotation-curve catalogue (Lelli et al. 2016)
+* Sample: 165 galaxies with ≥15 radial points and positive velocity errors
+* Comparison:
+- Baseline = baryons + Burkert halo (2 parameters)
+- History model = baseline + history field (still 2 parameters)
+* Metric: Bayesian Information Criterion (BIC)
 
 ### 3. Results
 
-| Metric                  | Value                  | Interpretation                     |
-|-------------------------|------------------------|------------------------------------|
-| Positive ΔBIC           | **40 / 84 (47.6 %)**   | Improves nearly half the sample    |
-| Median ΔBIC             | **−0.058**             | Statistically fair                 |
-| Mean ΔBIC               | −54.87                 | Outliers still present             |
+Metric	Value	Interpretation
+Positive ΔBIC	74 / 165 (44.8%)	Improves a substantial subset of galaxies
+Median ΔBIC	−0.019	Population-level behaviour remains near neutral
+Mean ΔBIC	−28.29	Some negative outliers remain present
 
-**Strongest improvements** (top 10 galaxies):
+Strongest improvements (top 10 galaxies):
 
-| Galaxy     | ΔBIC      |
-|------------|-----------|
-| NGC 2403   | +693.5    |
-| UGC 11914  | +500.1    |
-| NGC 6015   | +298.5    |
-| NGC 5585   | +45.3     |
-| UGC 03205  | +19.5     |
-| NGC 3521   | +17.2     |
-| NGC 6195   | +14.4     |
-| NGC 1003   | +9.7      |
-| NGC 6503   | +8.4      |
-| NGC 7793   | +6.0      |
+Galaxy	ΔBIC
+NGC 2403	+693.5
+UGC 11914	+500.1
+NGC 6015	+298.5
+NGC 5585	+45.3
+UGC 03205	+19.5
+NGC 3521	+17.2
+NGC 6195	+14.4
+NGC 1003	+9.7
+NGC 6503	+8.4
+NGC 0801	+7.8
 
-The model performs best precisely on galaxies that have historically been difficult to fit with smooth dark-matter halos.
+Notably, the dominant high-ΔBIC galaxies remained largely unchanged as the tested sample increased from 84 to 165 systems. This stability suggests that the strongest signals are not purely artifacts of small-sample selection effects.
 
 ### 4. Interpretation
 
-The success of a completely parameter-free model suggests that real dark-matter halos may carry a "memory" of their baryonic evolutionary history. The history accumulation mechanism is simple, transparent, and built directly from the observed rotation curve.
+The results suggest that cumulative baryonic structural history may encode a measurable phenomenological contribution to rotational support in at least a subset of galaxies. The model is intentionally deterministic and globally fixed across the tested sample, avoiding galaxy-specific tuning beyond the standard halo fit itself.
+
+While these results do not establish evidence for new gravitational or dark-matter physics, the persistence of strong improvements in specific galaxies under a fixed accumulation framework motivates further controlled investigation into possible history-dependent structural effects in galactic dynamics.
 
 ### 5. How to Reproduce
 
