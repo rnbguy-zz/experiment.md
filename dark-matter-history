@@ -95,6 +95,63 @@ In particular, NGC 2403, UGC 11914, and NGC 6015 remained the strongest-performi
 
 This robustness suggests that the observed signal is not solely dependent on narrowly fine-tuned coefficient choices, but instead reflects a more stable structural relationship within the accumulation framework itself.
 
+### 3.2 Predictive Validation Test
+
+To test whether the history-accumulation framework possesses predictive capability beyond descriptive fitting, a blind predictive validation experiment was performed across the SPARC sample.
+
+For each galaxy:
+
+* the inner 70% of radial data points were used as the fitting region,
+* the outer 30% of the rotation curve was withheld from fitting,
+* halo parameters were optimized only on the inner region,
+* and the frozen history-accumulation model was then used to predict the unseen outer rotation behaviour.
+
+No galaxy-specific retuning or post-fit adjustment was performed after the hidden regions were revealed.
+
+The predictive comparison was evaluated using the difference in prediction-region χ²:
+
+[
+\Delta_{\rm prediction}
+=======================
+
+## \chi^2_{\rm baseline}
+
+\chi^2_{\rm history}
+]
+
+Positive values therefore indicate improved prediction of the unseen outer rotation curve by the history-accumulation model relative to the baseline Burkert halo fit.
+
+#### Predictive Validation Results
+
+| Metric               | Value                |
+| -------------------- | -------------------- |
+| Galaxies tested      | 107                  |
+| Positive predictions | **61 / 107 (57.0%)** |
+| Median ΔPrediction   | **+0.152**           |
+| Mean ΔPrediction     | −579.30              |
+
+The strongest predictive improvements included:
+
+| Galaxy   | ΔPrediction |
+| -------- | ----------- |
+| UGC02953 | +886.2      |
+| UGC09133 | +503.8      |
+| UGC06786 | +472.4      |
+| NGC2403  | +409.6      |
+| UGC03580 | +264.7      |
+| UGC03205 | +256.1      |
+| UGC02916 | +180.9      |
+| NGC6195  | +63.2       |
+| UGC06614 | +59.6       |
+| NGC6015  | +55.8       |
+
+Importantly, several galaxies that previously exhibited strong ΔBIC improvements also remained strong under predictive validation, including NGC2403 and NGC6015.
+
+Unlike descriptive fitting alone, this test evaluates whether the accumulation framework can generalize to previously unseen rotational structure. The positive median ΔPrediction and majority-positive predictive outcomes suggest that the history-accumulation field may encode information relevant to outer-galaxy rotational behaviour beyond that captured by the baseline smooth halo model alone.
+
+While the model does not universally outperform the baseline prediction, the emergence of predictive improvements across a substantial subset of galaxies motivates further controlled investigation into history-dependent structural effects in galactic dynamics.
+
+
 ### 4. Interpretation
 
 The results suggest that cumulative baryonic structural history may encode a measurable phenomenological contribution to rotational support in at least a subset of galaxies. The model is intentionally deterministic and globally fixed across the tested sample, avoiding galaxy-specific tuning beyond the standard halo fit itself.
