@@ -69,6 +69,32 @@ NGC 0801	+7.8
 
 Notably, the dominant high-ΔBIC galaxies remained largely unchanged as the tested sample increased from 84 to 165 systems. This stability suggests that the strongest signals are not purely artifacts of small-sample selection effects.
 
+### 3.1 Parameter Robustness Test
+
+To test whether the observed signal depends sensitively on specific coefficient choices, a robustness sweep was performed in which the primary accumulation, smoothing, amplification, and clipping parameters were substantially perturbed while keeping the overall model structure unchanged.
+
+The following parameters were varied simultaneously:
+
+accumulation decay scale (τ)
+structure exponent
+smoothing scales
+amplification scaling
+global history-field scaling
+positive and negative clipping limits
+
+These perturbations altered the detailed construction of the history field while preserving the underlying accumulation framework.
+
+Despite these substantial modifications, the overall statistical behaviour of the model remained remarkably stable across the SPARC sample:
+
+Median ΔBIC remained near zero
+The positive-fit fraction remained near 45%
+The same dominant high-ΔBIC galaxies consistently reappeared
+Large improvements persisted with similar order-of-magnitude strength
+
+In particular, NGC 2403, UGC 11914, and NGC 6015 remained the strongest-performing galaxies under the perturbed parameter configuration.
+
+This robustness suggests that the observed signal is not solely dependent on narrowly fine-tuned coefficient choices, but instead reflects a more stable structural relationship within the accumulation framework itself.
+
 ### 4. Interpretation
 
 The results suggest that cumulative baryonic structural history may encode a measurable phenomenological contribution to rotational support in at least a subset of galaxies. The model is intentionally deterministic and globally fixed across the tested sample, avoiding galaxy-specific tuning beyond the standard halo fit itself.
