@@ -15,7 +15,7 @@ Importantly, the strongest-performing galaxies remained stable as the tested sam
 
 ### 1. The Pure History Accumulation Model
 
-The model contains **no free parameters** beyond the two standard Burkert halo parameters (ρ₀, r₀).
+The model introduces no galaxy-specific fitting parameters beyond the baseline Burkert halo fit.
 
 For each galaxy we:
 1. Compute the baryonic circular-speed squared  
