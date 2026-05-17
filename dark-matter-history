@@ -110,14 +110,7 @@ No galaxy-specific retuning or post-fit adjustment was performed after the hidde
 
 The predictive comparison was evaluated using the difference in prediction-region χ²:
 
-[
-\Delta_{\rm prediction}
-=======================
-
-## \chi^2_{\rm baseline}
-
-\chi^2_{\rm history}
-]
+Δprediction​=χbaseline2​−χhistory
 
 Positive values therefore indicate improved prediction of the unseen outer rotation curve by the history-accumulation model relative to the baseline Burkert halo fit.
 
